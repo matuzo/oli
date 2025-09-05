@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+
+<link rel="stylesheet" href="/assets/css/patterns/patterns.css">
+{% if css %}
+  <link rel="stylesheet" href="/assets/css/patterns/{{ page.fileSlug }}.css">
+{% endif %}
+
+{{ content | safe }}
+
+<script src="/assets/js/patterns/patterns.js"></script>
+
+{% if js %}
+
+  {% if js == true %}
+    <script src="/assets/js/patterns/{{ page.fileSlug }}.js"></script>
+  {% else %}
+    {% for jsfile in js %}
+      <script src="{{ jsfile }}"></script>
+    {% endfor %}
+  {% endif %}
+{% endif %}

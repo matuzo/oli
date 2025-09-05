@@ -1,0 +1,215 @@
+/**
+ * Styled elements that look differently when magic is true
+ * 
+ */
+
+@container style(--oli-s-magic: true) {
+	header, main, footer {
+		--_wrapper-layout: max(0px, ((var(--oli-s-page-width) - var(--oli-s-page-max-width)) / 2));
+	}
+
+	main {
+		--_main-margin: 0 var(--_wrapper-layout);
+	}
+
+	header, [role="banner"] {
+		--_header-align-items: center;
+		--_header-border-image: var(--oli-s-header-border-image);
+		--_header-justify-content: space-between;
+		--_header-margin: 0 var(--_wrapper-layout) var(--oli-s-header-margin-block-end);
+		--_header-padding-block: var(--oli-g-spacing-s);
+	}
+
+	footer, [role="contentinfo"] {
+		--_footer-margin: var(--oli-s-footer-margin-block-start) var(--_wrapper-layout) 0;
+
+	}
+
+	body {
+		--_body-padding: 0 var(--oli-s-page-padding) var(--oli-s-page-padding);
+	}
+}
+
+/**
+ * Elements that have no default styling but look differently when 
+ * magic is true
+ * 
+ */
+@container style(--oli-s-magic: true) {
+	/**
+	 * The first div is reserved for the logo and/or title of the page
+	 */
+	header > div:first-child {
+		align-items: center;
+		display: flex;
+		gap: 8px;
+		line-height: 1;
+	}
+
+	/**
+	 * Title of the page
+	 */
+	header > div:first-child a {
+		--oli-s-text-exponent: 4;
+
+		font-weight: 500;
+		text-decoration: none;
+		color: var(--oli-s-header-color);
+	}
+
+	/**
+	 * Main navigation
+	 */
+	header nav :is(ol, ul) {
+		--oli-s-text-exponent: var(--oli-s-main-nav-text-scale);
+		--oli-s-list-flex-direction: row;
+		
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		gap: var(--oli-s-main-nav-gap);
+		display: flex;
+	}
+
+	/**
+	 * Links within the main navigation
+	 */
+	header nav a {
+		--_header-main-nav-link-text-decoration: none;
+		text-decoration: var(--_header-main-nav-link-text-decoration);
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		text-underline-offset: 0.22em;
+		text-decoration-thickness: 0.12em;
+	}
+	
+	header nav a:is(:link, :visited) {
+		color: var(--oli-s-main-nav-color);
+	}
+	
+	header nav a:hover {
+		--_header-main-nav-link-text-decoration: underline;
+	}
+
+	/* Active link */
+	header nav a[aria-current="page"] {
+		--_header-main-nav-link-text-decoration: underline;
+		color: var(--oli-s-main-nav-color-active);
+	}
+
+	/**
+	 * Image grid
+	 * If the first and last direct child elements are links
+	 * that contain imgs, turn the div into a flex element.
+	 * I know, that's not the safest approach but it should 
+	 * be good enough.
+	 */
+	div:has(a:first-child > img):has(a:last-child > img) {
+		display: flex;
+		gap: var(--oli-g-spacing-s);
+	}
+ 
+	/**
+	 * Add a margin to the image grid
+	 */
+	div:has(a:first-child > img):has(a:last-child > img):not(:last-child) {
+		margin-block-end: var(--oli-s-content-spacing);
+	}
+
+	/**
+	 *
+	 */
+	:is(div, p):has(>[aria-invalid]) {
+		color: var(--oli-s-states-error);
+	}
+}
+
+/**
+ * Styled elements that look differently in the vertical
+ * layout
+ * 
+ */
+@container style(--oli-s-layout: vertical) {
+	/**
+ 	 * 1 Remove the padding on the body in vertical layouts
+	 * 2 Add padding for header, main, footer
+	 * 3 No extra padding for header, main, footer
+	 */
+	body {
+		--_body-start-column: calc(var(--oli-s-page-start-column-width) + (var(--_wrapper-padding) * 2));
+		--_body-padding: 0; /* 1 */
+		--_wrapper-padding: var(--oli-s-page-padding); /* 2 */
+		--_body-display: grid;
+		--_body-grid-template-columns: var(--_body-start-column) 1fr;
+		--_body-grid-template-row: 1fr auto;
+		--_body-min-inline-size: 100dvh;
+	}
+
+	header,
+	[role="banner"] {
+		--_header-padding-block: var(--_wrapper-padding);
+		--_header-padding-inline: var(--_wrapper-padding);
+		--_header-border-image: initial;
+		--_header-margin: 0;
+	}
+
+	main {
+		--_main-padding-block: var(--oli-s-content-vertical-offset, var(--_wrapper-padding)) var(--_wrapper-padding);
+		--_main-padding-inline: 0 var(--_wrapper-padding);
+		--_main-margin: 0;
+		--_main-max-inline-size: calc(var(--oli-s-page-max-width) - var(--_body-start-column));;
+	}
+
+	footer {
+		--_footer-grid-column: 1 / -1;
+	}
+}
+
+/**
+ * Elements that have no default styling but look differently in 
+ * the vertical layout
+ * 
+ */
+@container style(--oli-s-layout: vertical) {
+	header > div:first-child {
+		margin-block-end: var(--oli-s-header-title-margin-block-end);
+	}
+
+	header > div:first-child svg {
+		width: var(--oli-s-header-logo-inline-size);
+	}
+
+	header nav :is(ol, ul) {
+		--oli-s-list-flex-direction: column;
+		gap: var(--oli-s-main-nav-gap-vertical);
+	}
+}
+
+/**
+ * Align content within header only if magic is true and the layout
+ * is not vertical 
+ */
+@container style(--oli-s-magic: true) and style(--oli-s-layout: horizontal) {
+	header,
+	[role="banner"] {
+		display: flex;
+	}
+}
+
+/**
+ * Reset header styles when the header is nested in
+ * rticle, aside, main, nav or section)
+ */
+@container style(--oli-s-magic: true) or style(--oli-s-layout: vertical) {
+	:is(article, aside, main, nav, section) :is(header, footer) {
+		all: revert;
+	}
+}
+
+/**
+ *
+ * in ua plus anpassen
+ * :where(label):has(+ :where(textarea, input:not([type="radio"], [type="checkbox"]), select)) {
+  display: block;
+}
+ */

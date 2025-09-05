@@ -1,0 +1,48 @@
+---
+title: "Text-level semantics"
+layout: base.njk
+eleventyComputed:
+  intro: "<p>This page is built using the following elements: {{ elements | safe }}, and others. </p>"
+elements: <code>a</code>, <code>em</code>, <code>strong</code>, <code>small</code>, <code>s</code>, <code>cite</code>, <code>q</code>, <code>dfn</code>, <code>abbr</code>, <code>ruby</code>, <code>rt</code>, <code>rp</code>, <code>time</code>, <code>var</code>, <code>samp</code>, <code>code</code>, <code>kbd</code>, <code>sup</code>, <code>sub</code>, <code>i</code>, <code>b</code>, <code>u</code>, <code>del</code>, <code>ins</code>, <code>mark</code>
+tags:
+  - demo
+---
+
+<a href="#"></a>
+
+{% macro text(sample) %}
+ <p>
+  {{ sample | safe }}
+    {# <button style="--oli-s-text-exponent: -1" popovertarget="details-{{key}}{{subkey}}{{subsubkey}}" aria-label="details">i</button> #}
+  </p>
+{# <div popover id="details-{{key}}{{subkey}}{{subsubkey}}">
+    {{ sample }}
+</div> #}
+{% endmacro %}
+
+{{ text('Rudy Gobert is from <a href="https://en.wikipedia.org/wiki/France">France</a>.') }}
+{{ text('Niklo Jokić <em>not from this world</em>.') }}
+{{ text('Giannis Antetokounmpo is <strong>amazing</strong>.') }}
+{{ text('A Victor Wembanyama jersey costs $120 <small>(VAT included)</small>.') }}
+{{ text('Luka Dončić <s>plays for the Dallas Mavericks</s>.') }}
+{{ text('Scottie Pippen wrote <cite>Unguarded</cite>.') }}
+{{ text('Allen Iversion once said <q>I’d rather have more heart than talent any day.</q>') }}
+{{ text('The term <dfn>GOAT (Greatest of all time)</dfn> describes the best player of all time.') }}
+{{ text('<abbr>FG%</abbr> stands for Field Goal Percentage.') }}
+{{ text('Rui Hachimura can read this: <ruby>君<rt>くん</ruby><ruby>子<rt>し</ruby>は<ruby>和<rt>わ</ruby>して<ruby>同<rt>どう</ruby>ぜず。.') }}
+{{ text('Kobe Bryant died on  <time class="dtstart" datetime="2020-01-26">January 26, 2020</time>.') }}
+{{ text('The formula to calculate the <abbr>FG%</abbr>: (<var>FG</var> + 0.5 * <var>3P</var>) / <var>FGA</var>.') }}
+{{ text('The computer calculated Steph Curry’s 2024/25 <abbr>FG%</abbr>: <samp>44.8</samp>') }}
+{{ text('There is no <code>&lt;nba&gt;</code> element.') }}
+{{ text('Watching the Wizards play in your browser, all you can do it press <kbd><kbd>Alt</kbd> + <kbd>F4</kbd></kbd>.') }}
+{{ text('Jakon Pöltl’s house has probably more than 100m<sup>2</sup>.') }}
+{{ text('Franz Wagner drinks H<sub>2</sub>O.') }}
+{{ text('There is a certain <i lang="fr">je ne sais quoi</i> about Kyrie Irving’s game.') }}
+{{ text('Ivica Zubac is <b>strong</b>.') }}
+{{ text('Jonas Valančiūnas is from <u>Lituania</u>.') }}
+{{ text('Dirk Nowitzki is <del>still</del> <ins>not</ins> active.') }}
+{{ text('All the mentioned men here are or were <mark>NBA players</mark>.') }}
+
+
+
+

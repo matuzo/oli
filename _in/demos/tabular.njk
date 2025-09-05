@@ -1,0 +1,367 @@
+---
+title: "Tabular data"
+layout: base.njk
+eleventyComputed:
+  intro: "<p>This page is built using the following elements: {{ elements | safe }}, and others. </p>"
+elements: <code>table</code>, <code>caption</code>, <code>tr</code>, <code>td</code>, <code>th</code>
+tags:
+  - demo
+---
+
+<section>
+  <h2>Basic</h2>
+
+  <table>
+    <caption>Scores Group A</caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Michael</td>
+        <td>27</td>
+        <td>Austria</td>
+      </tr>
+      <tr>
+        <td>Robert</td>
+        <td>7</td>
+        <td>Croatia</td>
+      </tr>
+      <tr>
+        <td>Andreas</td>
+        <td>53</td>
+        <td>Austria</td>
+      </tr>
+      <tr>
+        <td>Dominik</td>
+        <td>19</td>
+        <td>Croatia</td>
+      </tr>
+      <tr>
+        <td>David</td>
+        <td>21</td>
+        <td>Austria</td>
+      </tr>
+      <tr>
+        <td>Heinrich</td>
+        <td>12</td>
+        <td>Austria</td>
+      </tr>
+      <tr>
+        <td>Markus</td>
+        <td>14</td>
+        <td>Austria</td>
+      </tr>
+      <tr>
+        <td>Paul</td>
+        <td>42</td>
+        <td>Austria</td>
+      </tr>
+      <tr>
+        <td>Nicolas</td>
+        <td>3</td>
+        <td>Spain</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Row scope</h2>
+    <p><code>td</code></p>
+  </hgroup>
+
+  <table>
+    <caption>Total scores Group A</caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Q1</th>
+        <th>Q2</th>
+        <th>Q3</th>
+        <th>Q4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Michael</th>
+        <td>47</td>
+        <td>28</td>
+        <td>91</td>
+        <td>65</td>
+      </tr>
+      <tr>
+        <th>Robert</th>
+        <td>97</td>
+        <td>13</td>
+        <td>42</td>
+        <td>61</td>
+      </tr>
+      <tr>
+        <th>Dominik</th>
+        <td>29</td>
+        <td>28</td>
+        <td>19</td>
+        <td>57</td>
+      </tr>
+      <tr>
+        <th>David</th>
+        <td>61</td>
+        <td>11</td>
+        <td>29</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <th>Markus</th>
+        <td>72</td>
+        <td>70</td>
+        <td>73</td>
+        <td>44</td>
+      </tr>
+      <tr>
+        <th>Paul</th>
+        <td>122</td>
+        <td>100</td>
+        <td>87</td>
+        <td>69</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Row scope</h2>
+    <p><code>td[scope="row"]</code></p>
+  </hgroup>
+
+  <div role="region" aria-labelledby="scores_caption" tabindex="0">
+    <table>
+      <caption id="scores_caption">Total scores Group A</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Q1</th>
+          <th>Q2</th>
+          <th>Q3</th>
+          <th>Q4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">Michael</td>
+          <td>47</td>
+          <td>28</td>
+          <td>91</td>
+          <td>65</td>
+        </tr>
+        <tr>
+          <td scope="row">Robert</td>
+          <td>97</td>
+          <td>13</td>
+          <td>42</td>
+          <td>61</td>
+        </tr>
+        <tr>
+          <td scope="row">Dominik</td>
+          <td>29</td>
+          <td>28</td>
+          <td>19</td>
+          <td>57</td>
+        </tr>
+        <tr>
+          <td scope="row">David</td>
+          <td>61</td>
+          <td>11</td>
+          <td>29</td>
+          <td>59</td>
+        </tr>
+        <tr>
+          <td scope="row">Markus</td>
+          <td>72</td>
+          <td>70</td>
+          <td>73</td>
+          <td>44</td>
+        </tr>
+        <tr>
+          <td scope="row">Paul</td>
+          <td>122</td>
+          <td>100</td>
+          <td>87</td>
+          <td>69</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Inputs in tables</h2>
+  <table>
+    <caption>Scores Group A</caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th id="score">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="name1">Michael</td>
+        <td><input type="text" aria-labelledby="name1 score" value="27"></td>
+      </tr>
+      <tr>
+        <td id="name2">Robert</td>
+        <td><input type="text" aria-labelledby="name2 score"></td>
+      </tr>
+      <tr>
+        <td id="name3">Dominik</td>
+        <td><input type="text" aria-labelledby="name3 score"></td>
+      </tr>
+      <tr>
+        <td id="name4">David</td>
+        <td><input type="text" aria-labelledby="name4 score"></td>
+      </tr>
+      <tr>
+        <td id="name5">Markus</td>
+        <td><input type="text" aria-labelledby="name5 score"></td>
+      </tr>
+      <tr>
+        <td id="name6">Paul</td>
+        <td><input type="text" aria-labelledby="name6 score"></td>
+      <tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Complex table</h2>
+  <div role="region" tabindex="0">
+    <table>
+      <caption>
+        Names of newborn children in Vienna 2024
+      </caption>
+      <tbody>
+        <tr>
+          <th colspan="4" style="text-align: center">Girls</th>
+          <th colspan="4" style="text-align: center">Boys</th>
+        </tr>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Count</th>
+          <th>Percentage of newborn girls</th>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Count</th>
+          <th>Percentage of newborn boys</th>
+        </tr>
+        <tr>
+          <td>1.</td>
+          <td>Emilia</td>
+          <td>132</td>
+          <td>1,5</td>
+          <td>1.</td>
+          <td>Felix</td>
+          <td>109</td>
+          <td>1,2</td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>Mia</td>
+          <td>124</td>
+          <td>1,4</td>
+          <td>2.</td>
+          <td>Noah</td>
+          <td>106</td>
+          <td>1,1</td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>Emma</td>
+          <td>108</td>
+          <td>1,2</td>
+          <td>3.</td>
+          <td>Adam</td>
+          <td>100</td>
+          <td>1,1</td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>Sophia</td>
+          <td>83</td>
+          <td>0,9</td>
+          <td>4.</td>
+          <td>David</td>
+          <td>98</td>
+          <td>1,0</td>
+        </tr>
+        <tr>
+          <td>5.</td>
+          <td>Sara</td>
+          <td>82</td>
+          <td>0,9</td>
+          <td>5.</td>
+          <td>Elias</td>
+          <td>95</td>
+          <td>1,0</td>
+        </tr>
+        <tr>
+          <td>6.</td>
+          <td>Laura</td>
+          <td>77</td>
+          <td>0,9</td>
+          <td>6.</td>
+          <td>Leon</td>
+          <td>94</td>
+          <td>1,0</td>
+        </tr>
+        <tr>
+          <td>7.</td>
+          <td>Sophie</td>
+          <td>74</td>
+          <td>0,8</td>
+          <td>6.</td>
+          <td>Maximilian</td>
+          <td>94</td>
+          <td>1,0</td>
+        </tr>
+        <tr>
+          <td>8.</td>
+          <td>Elena</td>
+          <td>73</td>
+          <td>0,8</td>
+          <td>8.</td>
+          <td>Theodor</td>
+          <td>93</td>
+          <td>1,0</td>
+        </tr>
+        <tr>
+          <td>9.</td>
+          <td>Lara</td>
+          <td>72</td>
+          <td>0,8</td>
+          <td>9.</td>
+          <td>Jakob</td>
+          <td>81</td>
+          <td>0,9</td>
+        </tr>
+        <tr>
+          <td>10.</td>
+          <td>Anna</td>
+          <td>71</td>
+          <td>0,8</td>
+          <td>10.</td>
+          <td>Mateo</td>
+          <td>75</td>
+          <td>0,8</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

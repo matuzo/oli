@@ -1,0 +1,156 @@
+---
+title: "oli.css"
+layout: base.njk
+subtitle: a modern no-class framework
+prop: "--oli-s-magic: false; --oli-s-layout: vertical"
+---
+<section>
+
+  <p>oli.css is an accessible no-class CSS framework built with modern CSS. It allows you to create beautiful prototypes without writing any CSS or it can serve as a strong starting point for any website.</p>
+
+  <div>
+    <a href="#">
+      <img src="/media/record.jpg" width="272" alt="">
+    </a>
+    <a href="#">
+      <img src="/media/record.jpg" width="272" alt="">
+    </a>
+    <a href="#">
+      <img src="/media/record.jpg" width="272" alt="">
+    </a>
+  </div>
+
+  <p>
+    Take a look at a <a href="#">Demo</a>.
+  </p>
+
+    <header>
+    Don't style my heading
+  </header>
+</section>
+
+<section>
+
+  <h2>Features</h2>
+
+  <ul>
+    <li>no classes or data- attributes</li>
+    <li>WCAG 2.2 AA compliant</li>
+    <li>xx KB minified and gzipped</li>
+    <li>uses modern CSS</li>
+    <li>cuts the mustard at Cascade Layers</li>
+    <li>highly configurably CSS-API</li>
+  </ul>
+
+  [SCREEN SHOT]
+</section>
+
+<section>
+  <h2>Getting started</h2>
+
+  <p>To use oli.css you have three options</p>
+
+  <h3>Download</h3>
+  <p><a href="#">Download the .zip file</a> and embed it in your pages.</p>
+
+{% highlight "html" %}
+<link rel="stylesheet" href="oli/index.css">
+{% endhighlight %}
+
+or import it in one of your layers
+
+{% highlight "css" %}
+@import url('third-party/oli/index.css') layer(third-party);
+{% endhighlight %}
+
+<h3>CDN</h3>
+<p>Use a CDN and embed it in your pages.</p>
+
+{% highlight "html" %}
+<link rel="stylesheet" href="https://bla.oli/index.css">
+{% endhighlight %}
+
+<h3>NPM</h3>
+<p>Install it via npm</p>
+{% highlight "bash" %}
+npm install
+{% endhighlight %}
+
+
+{# 
+
+{% highlight "css" %}
+button {
+  position: absolute;
+}
+
+button.a {
+  z-index: calc(infinity);
+  background: green;
+}
+
+button.b {
+  z-index: 2147483646;
+  background: blue;
+}
+{% endhighlight %}
+
+{% highlight "js" %}
+closeButton.addEventListener('click', e => {
+   dialog.requestClose();
+})
+dialog.oncancel = (e) => {
+ if (e.cancelable) {
+   if (!confirm("Are you sure you want to close this?")) {
+     e.preventDefault();
+   }
+ }
+}
+{% endhighlight %} #}
+
+
+{# 
+  
+
+  <div class="phi-card" style="--phi-card-axis: x">
+    <div class="phi-card-inner">
+      <div class="phi-card-content">
+        <h3>Demo</h3>
+
+        <p>
+          Content
+        </p>
+      </div>
+
+      <img src="https://assets.codepen.io/144736/pexels-digital-buggu-365069.jpg" alt="" class="phi-card-media" >
+    </div>
+  </div>
+  
+  <div class="phi-card" style="--phi-card-size: l; --phi-card-axis: x; --phi-card-color-scheme: dark">
+    <div class="phi-card-inner">
+      <div class="phi-card-content">
+        <h3>Demo</h3>
+
+        <p>
+          Content
+        </p>
+      </div>
+
+      <img src="https://assets.codepen.io/144736/pexels-digital-buggu-365069.jpg" alt="" class="phi-card-media" >
+    </div>
+  </div>
+  
+  <div class="phi-card" style="--phi-card-size: s; --phi-card-axis: x">
+    <div class="phi-card-inner">
+      <div class="phi-card-content">
+        <h3>Demo</h3>
+
+        <p>
+          Content
+        </p>
+      </div>
+
+      <img src="https://assets.codepen.io/144736/pexels-digital-buggu-365069.jpg" alt="" class="phi-card-media" >
+    </div>
+  </div> #}
+</section>

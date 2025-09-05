@@ -1,0 +1,54 @@
+.level1 {
+    --oli-s-list-flex-direction: row;
+    list-style: none;
+    gap: 1rem;
+}
+
+.level1 > li {
+  line-height: 1;
+}
+
+.level2 {
+  display: none;
+  opacity: 0;
+  transition: opacity 300ms, display 300ms allow-discrete;
+  position: absolute;
+  top: 100%;
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+  background: var(--oli-s-page-background-color)
+}
+
+.level2 li + li {
+  margin-top: 1rem;
+}
+
+button {
+  all: unset;
+}
+
+button:focus-visible {
+  outline: 1px solid;
+}
+
+li {
+  position: relative;
+
+}
+
+a {
+}
+
+a:hover ~ .level2, 
+.level2:hover,
+[aria-expanded="true"] + .level2 {
+  display: block;
+  opacity: 1;
+}
+
+@starting-style {
+  .level2 {
+    opacity: 0;
+  }
+}

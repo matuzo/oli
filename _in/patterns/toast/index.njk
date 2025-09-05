@@ -1,0 +1,39 @@
+---
+title: "Toast"
+date: 2025-01-23
+js: true
+css: true
+---
+
+<section>
+  <button>Save</button>
+
+  <div class="toast-bar">
+  </div>
+
+  <template id="template">
+    <div class="toast">
+      Saved successfully
+    </div>
+  </template>
+</section>
+
+<section>
+  <h2>Checklist</h2>
+
+  <ul>
+    <li>Understand and consider that toasts will be missed by some users</li>
+    <li>Toasts are usually stacked at the end of the DOM. Adding them elsewhere may be confusing.</li>
+    <li>The toast or snack bar may overlap the rest of the page, especially when the UI is zoomed in</li>
+    <li>Users may miss toasts if the disappear (too quickly)</li>
+    <li>Message must be announced via live regions</li>
+    <li>Interactive toasts are hard to reach for keyboard and screen reader users</li>
+    <li>Strategies
+      <ol>
+        <li>Message holder</li>
+        <li>Static text</li>
+      </ol>
+    </li>
+  </ul>
+
+</section>

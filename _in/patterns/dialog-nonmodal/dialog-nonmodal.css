@@ -1,0 +1,23 @@
+[popovertarget="tooltip1"] {
+  anchor-name: --login;
+}
+
+[popovertarget="dialog1"] {
+  anchor-name: --favoriten;
+}
+
+[popover] {
+ inset-block-start: anchor(end);
+ inset-inline-start: anchor(start);
+ margin: 0;
+}
+
+#tooltip1 {
+ position-anchor: --login;
+}
+
+#dialog1 {
+ position-anchor: --favoriten;
+ inset-block-start: anchor(start);
+ inset-inline-start: anchor(end);
+}

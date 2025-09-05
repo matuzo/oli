@@ -1,0 +1,22 @@
+---
+title: "Demos"
+layout: base.njk
+intro: "<p>The entire website is built with oli.css but there are also additional demos that showcase most elements in HTML</p>"
+---
+
+<section>
+  {% for demo in collections.demo %}
+    {% if 'all-' not in demo.fileSlug%}
+      <h2>{{ demo.data.title }}</h2>
+    
+      {% if demo.data.elements %}
+        <p>Showcases: {{ demo.data.elements | safe }}</p>
+      {% endif %}
+    
+      <p>
+        <a href="{{ demo.url }}">{{ demo.data.title }}</a>
+      </p>
+    {% endif %}
+  {% endfor %}
+
+</section>

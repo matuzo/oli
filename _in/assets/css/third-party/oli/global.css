@@ -1,0 +1,78 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --oli-g-colors-black: oklch(0.32 0 271);
+  --oli-g-colors-white: oklch(1 0 0);
+  --oli-g-colors-color-1: oklch(0.47 0.09 130.31);
+  --oli-g-colors-color-1-100: oklch(from var(--oli-g-colors-color-1) 0.9 c h);
+  --oli-g-colors-color-1-200: oklch(from var(--oli-g-colors-color-1) 0.8 c h);
+  --oli-g-colors-color-1-300: oklch(from var(--oli-g-colors-color-1) 0.7 c h);
+  --oli-g-colors-color-1-400: oklch(from var(--oli-g-colors-color-1) 0.6 c h);
+  --oli-g-colors-color-1-500: oklch(from var(--oli-g-colors-color-1) 0.5 c h);
+  --oli-g-colors-color-1-600: oklch(from var(--oli-g-colors-color-1) 0.4 c h);
+  --oli-g-colors-color-1-700: oklch(from var(--oli-g-colors-color-1) 0.3 c h);
+  --oli-g-colors-color-1-800: oklch(from var(--oli-g-colors-color-1) 0.2 c h);
+  --oli-g-colors-color-1-900: oklch(from var(--oli-g-colors-color-1) 0.1 c h);
+  --oli-g-colors-color-2: oklch(0.83 0.16 95);
+  --oli-g-colors-color-2-100: oklch(from var(--oli-g-colors-color-2) 0.9 c h);
+  --oli-g-colors-color-2-200: oklch(from var(--oli-g-colors-color-2) 0.8 c h);
+  --oli-g-colors-color-2-300: oklch(from var(--oli-g-colors-color-2) 0.7 c h);
+  --oli-g-colors-color-2-400: oklch(from var(--oli-g-colors-color-2) 0.6 c h);
+  --oli-g-colors-color-2-500: oklch(from var(--oli-g-colors-color-2) 0.5 c h);
+  --oli-g-colors-color-2-600: oklch(from var(--oli-g-colors-color-2) 0.4 c h);
+  --oli-g-colors-color-2-700: oklch(from var(--oli-g-colors-color-2) 0.3 c h);
+  --oli-g-colors-color-2-800: oklch(from var(--oli-g-colors-color-2) 0.2 c h);
+  --oli-g-colors-color-2-900: oklch(from var(--oli-g-colors-color-2) 0.1 c h);
+  --oli-g-colors-color-3: oklch(0.2229 0.0902 274.54);
+  --oli-g-colors-color-3-100: oklch(from var(--oli-g-colors-color-3) 0.9 c h);
+  --oli-g-colors-color-3-200: oklch(from var(--oli-g-colors-color-3) 0.8 c h);
+  --oli-g-colors-color-3-300: oklch(from var(--oli-g-colors-color-3) 0.7 c h);
+  --oli-g-colors-color-3-400: oklch(from var(--oli-g-colors-color-3) 0.6 c h);
+  --oli-g-colors-color-3-500: oklch(from var(--oli-g-colors-color-3) 0.5 c h);
+  --oli-g-colors-color-3-600: oklch(from var(--oli-g-colors-color-3) 0.4 c h);
+  --oli-g-colors-color-3-700: oklch(from var(--oli-g-colors-color-3) 0.3 c h);
+  --oli-g-colors-color-3-800: oklch(from var(--oli-g-colors-color-3) 0.2 c h);
+  --oli-g-colors-color-3-900: oklch(from var(--oli-g-colors-color-3) 0.1 c h);
+  --oli-g-colors-color-4: oklch(0.7269 0.1151 4.22);
+  --oli-g-colors-color-4-100: oklch(from var(--oli-g-colors-color-4) 0.9 c h);
+  --oli-g-colors-color-4-200: oklch(from var(--oli-g-colors-color-4) 0.8 c h);
+  --oli-g-colors-color-4-300: oklch(from var(--oli-g-colors-color-4) 0.7 c h);
+  --oli-g-colors-color-4-400: oklch(from var(--oli-g-colors-color-4) 0.6 c h);
+  --oli-g-colors-color-4-500: oklch(from var(--oli-g-colors-color-4) 0.5 c h);
+  --oli-g-colors-color-4-600: oklch(from var(--oli-g-colors-color-4) 0.4 c h);
+  --oli-g-colors-color-4-700: oklch(from var(--oli-g-colors-color-4) 0.3 c h);
+  --oli-g-colors-color-4-800: oklch(from var(--oli-g-colors-color-4) 0.2 c h);
+  --oli-g-colors-color-4-900: oklch(from var(--oli-g-colors-color-4) 0.1 c h);
+  --oli-g-colors-color-5: oklch(0.955 0 271);
+  --oli-g-colors-color-5-100: oklch(from var(--oli-g-colors-color-5) 0.9 c h);
+  --oli-g-colors-color-5-200: oklch(from var(--oli-g-colors-color-5) 0.8 c h);
+  --oli-g-colors-color-5-300: oklch(from var(--oli-g-colors-color-5) 0.7 c h);
+  --oli-g-colors-color-5-400: oklch(from var(--oli-g-colors-color-5) 0.6 c h);
+  --oli-g-colors-color-5-500: oklch(from var(--oli-g-colors-color-5) 0.5 c h);
+  --oli-g-colors-color-5-600: oklch(from var(--oli-g-colors-color-5) 0.4 c h);
+  --oli-g-colors-color-5-700: oklch(from var(--oli-g-colors-color-5) 0.3 c h);
+  --oli-g-colors-color-5-800: oklch(from var(--oli-g-colors-color-5) 0.2 c h);
+  --oli-g-colors-color-5-900: oklch(from var(--oli-g-colors-color-5) 0.1 c h);
+  --oli-g-colors-color-6: oklch(0.537 0.0254 274.4);
+  --oli-g-colors-color-6-100: oklch(from var(--oli-g-colors-color-6) 0.9 c h);
+  --oli-g-colors-color-6-200: oklch(from var(--oli-g-colors-color-6) 0.8 c h);
+  --oli-g-colors-color-6-300: oklch(from var(--oli-g-colors-color-6) 0.7 c h);
+  --oli-g-colors-color-6-400: oklch(from var(--oli-g-colors-color-6) 0.6 c h);
+  --oli-g-colors-color-6-500: oklch(from var(--oli-g-colors-color-6) 0.5 c h);
+  --oli-g-colors-color-6-600: oklch(from var(--oli-g-colors-color-6) 0.4 c h);
+  --oli-g-colors-color-6-700: oklch(from var(--oli-g-colors-color-6) 0.3 c h);
+  --oli-g-colors-color-6-800: oklch(from var(--oli-g-colors-color-6) 0.2 c h);
+  --oli-g-colors-color-6-900: oklch(from var(--oli-g-colors-color-6) 0.1 c h);
+  --oli-g-colors-color-7: oklch(0.6892 0.2004 22.38);
+  --oli-g-colors-color-7-100: oklch(from var(--oli-g-colors-color-7) 0.9 c h);
+  --oli-g-colors-color-7-200: oklch(from var(--oli-g-colors-color-7) 0.8 c h);
+  --oli-g-colors-color-7-300: oklch(from var(--oli-g-colors-color-7) 0.7 c h);
+  --oli-g-colors-color-7-400: oklch(from var(--oli-g-colors-color-7) 0.6 c h);
+  --oli-g-colors-color-7-500: oklch(from var(--oli-g-colors-color-7) 0.5 c h);
+  --oli-g-colors-color-7-600: oklch(from var(--oli-g-colors-color-7) 0.4 c h);
+  --oli-g-colors-color-7-700: oklch(from var(--oli-g-colors-color-7) 0.3 c h);
+  --oli-g-colors-color-7-800: oklch(from var(--oli-g-colors-color-7) 0.2 c h);
+  --oli-g-colors-color-7-900: oklch(from var(--oli-g-colors-color-7) 0.1 c h);
+}

@@ -1,0 +1,3 @@
+li:nth-child(n+6){
+  display: none;
+}

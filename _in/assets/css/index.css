@@ -1,0 +1,99 @@
+/* Establish the order of layers upfront */
+@layer core, third-party, components, utility;
+@layer core.reset, core.tokens, core.base;
+@layer third-party.imports, third-party.overrides;
+@layer components.base, components.variations;
+
+/* Reset, normalize, etc. */
+@import url('third-party/uaplus.css') layer(core.reset);
+@import url('third-party/oli/global.css') layer(core.tokens);
+@import url('third-party/oli/settings-tokens.css') layer(core.tokens);
+@import url('third-party/oli/settings.css') layer(core.tokens);
+@import url('third-party/oli/index.css') layer(core.base);
+@import url('third-party/oli/backend.css') layer(core.base);
+@import url('third-party/phili/index.css') layer(core.base);
+@import url('third-party/phili/plugins/prism.css') layer(third-party.imports);
+/* @import url('third-party/oli/api.css') layer(core.tokens); */
+
+@layer core.tokens {
+  :root {
+    --oli-s-logo-color-light: var(--oli-g-colors-color-1-400);
+    --oli-s-logo-color-dark: var(--oli-g-colors-color-1);
+    --oli-s-logo-color-text: var(--oli-g-colors-white);
+  }
+}
+
+@layer components {
+  .swatch {
+    aspect-ratio: 1; 
+    background: var(--swatch-background);
+    border: 2px solid oklch(from var(--swatch-background) calc(l - 0.1) c h);
+    width: 4rem; 
+    --oli-s-text-exponent: 1;
+
+    --l-threshold: 0.7;
+    --l: clamp(0, (l / var(--l-threshold) - 1) * -infinity, 1);
+    color: oklch(from var(--swatch-background) var(--l) 0 h);
+  }
+
+  @layer base {
+    .logo-leaf {
+      fill: var(--oli-s-logo-color-dark);
+    }
+
+    .logo-olive {
+      fill: var(--oli-s-logo-color-light);
+    }
+
+    .logo-text {
+      fill: var(--oli-s-logo-color-text);
+    }
+  }
+}
+
+/* Utility and helper classes */
+@layer utility {
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .p-u-df {
+    display: flex;
+  }
+
+  .p-u-gap-s {
+    gap: 1rem;
+  }
+
+  .p-u-mbe-s {
+    margin-block-end: 1rem;
+  }
+
+  .p-skiplink {
+    position: absolute;
+    background: var(--oli-g-colors-color-4-400);
+    color: var(--oli-g-colors-white);
+    text-decoration: none;
+    padding: 0.1rem 0.7rem;
+    border-radius: 3px;
+  }
+
+  .p-skiplink:not(:focus) {
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+  }
+}
+
+.highlight {
+  background-color: var(--oli-g-colors-color-5);
+}

@@ -1,0 +1,15 @@
+.fly-out {
+  background: red;
+  position: fixed;
+  inset: 0 0 auto auto;
+  height: 110dvh;
+  width: min(100%, 30rem);
+  padding: 1rem;
+  background: var(--oli-g-colors-color-4);
+  transition: transform 300ms, visibility 300ms;
+}
+
+[aria-expanded="false"] + .fly-out {
+  visibility: hidden;
+  transform: translateX(100%);
+}

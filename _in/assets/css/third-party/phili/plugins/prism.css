@@ -1,0 +1,123 @@
+
+/**
+ * matuzo theme for JavaScript, CSS, and HTML
+ * Based on the a11y-dark theme: https://github.com/PrismJS/prism-themes/blob/master/themes/prism-a11y-dark.css
+ * @author matuzo
+ */
+
+pre[class*='language-'] {
+  --code-background: var(--oli-g-colors-color-6-700);
+  --code-font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --code-text-regular: var(--oli-g-colors-color-5-100);
+  --code-padding: 1.6rem;
+  --code-border-radius: 6px;
+  --code-line-height: 1.7;
+  --code-tab-size: 8;
+  --oli-s-text-exponent: 0;
+}
+
+pre[class*='language-'] {
+  background: var(--code-background);
+  border-radius: var(--code-border-radius);
+  color: var(--code-text-regular);
+  font-family: var(--code-font-family);
+  hyphens: none;
+  line-height: var(--code-line-height);
+  tab-size: var(--code-tab-size);
+  overflow: auto;
+  padding: var(--code-padding);
+  white-space: normal;
+  width: 100%;
+  max-inline-size: var(--oli-s-content-max-width);
+}
+
+pre[class*='language-'] code {
+  font-family: var(--code-font-family);
+  white-space: pre;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--oli-g-colors-color-1-100);
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--c4);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--oli-g-colors-color-2-100);
+}
+
+/* .token.operator,
+.token.entity,
+.token.url .url,
+.style .token.string,
+.token.variable {
+  color: green;
+} */
+
+.token.url .url {
+  color: var(--oli-g-colors-color-1-100)
+}
+
+
+.token.punctuation,
+.token.keyword {
+  color: var(--oli-g-colors-color-1-200)
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.important {
+  color: oklch(from var(--c6) calc(l + 0.1) c h)
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.string,
+ .token.attr-value,
+ .token.function {
+   color: var(--oli-g-colors-color-7-200);
+ }
+
+  .token.atrule {
+   color: var(--oli-g-colors-color-2-100);
+  }
+
+.token.atrule .rule {
+  color: oklch(from var(--c3) calc(l + 0.08) calc(c + 0.03) calc(h + 0.07));
+}
+
+.language-css .token.string {
+  font-style: italic;
+}
+
+
+
+/* [role="group"] > pre[class*='language-'] {
+  margin: 0;
+}
+
+[role="group"]:has(>pre[class*='language-']) {
+  margin: 1em 0;
+}
+
+[role=group]:has(> pre[class*='language-']) {
+  overflow: auto;
+} */

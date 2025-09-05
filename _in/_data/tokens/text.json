@@ -1,0 +1,12 @@
+{
+  "g-text": {
+    "size-base": {
+      "value":  "1rem",
+      "options": ["<length-percentage>"]
+    },
+    "scale": {
+      "value": "1.24",
+      "options": ["<number>"]
+    }
+  }
+}

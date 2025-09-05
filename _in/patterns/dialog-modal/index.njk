@@ -1,0 +1,30 @@
+---
+title: "Dialog"
+subtitle: Modal
+date: 2025-01-11
+---
+
+<section>
+  <button commandfor="my-modal" command="show-modal" aria-haspopup="dialog">
+    Login
+  </button>
+
+  <dialog id="my-modal" closedby="any" aria-labelledby="my-modal_heading">
+    <button command="close" commandfor="my-modal">close</button>
+
+    <h1 id="my-modal_heading">Login</h1>
+  </dialog>
+</section>
+
+<section>
+  <h2>Checklist</h2>
+
+  <ul>
+    <li>Move focus from the button to the dialog</li>
+    <li>Move focus from the dialog to the button</li>
+    <li>Use <code>&lt;dialog&gt;</code> or <code>role="dialog"</code></li>
+    <li>Label the dialog</li>
+    <li>Make the rest of the page inert</li>
+  </ul>
+
+</section>

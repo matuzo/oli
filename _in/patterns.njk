@@ -1,0 +1,19 @@
+---
+title: "Patterns"
+layout: base.njk
+---
+
+<section>
+  <ol>
+  {% for pattern in collections.patterns %}
+    <li>
+      <a href="{{ pattern.url }}">
+        {{ pattern.data.title }}
+        {% if pattern.data.subtitle %}
+          ({{ pattern.data.subtitle }})
+        {% endif %}
+      </a>
+    </li>
+  {% endfor %}
+  </ol>
+</section>

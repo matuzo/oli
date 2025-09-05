@@ -1,0 +1,38 @@
+---
+title: "Skip link"
+date: 2025-01-31
+---
+
+<section>
+{% highlight "html" %}
+  <a href="#content" class="skiplink">Main content</a>
+{% endhighlight %}  
+
+
+{% highlight "css" %}
+.skiplink {
+  position: absolute;
+}
+
+.skiplink:not(:focus) {
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+{% endhighlight %}  
+  
+</section>
+
+<section>
+  <h2>Checklist</h2>
+
+  <ul>
+    <li>First element on the page</li>
+    <li>Add to page if there are more than 3 interactive elements in the header</li>
+    <li>No need for JavaScript</li>
+  </ul>
+
+</section>

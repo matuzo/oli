@@ -1,0 +1,54 @@
+---
+title: "Form"
+subtitle: Validation
+date: 2025-01-17
+css: true
+js: true
+---
+
+<section>
+  <div role="region" aria-labelledby="error_heading" tabindex="0" class="hidden">
+    <h4 id="error_heading">2 issues found</h4>
+
+    <ul>
+      <li><a href="#email">Please enter a valid e-mail address</a></li>
+      <li><a href="#password">Passwords must contain at least one number</a></li>
+    </ul>
+  </div>
+
+  <form>
+    <p>
+      <label for="email">Your e-mail address</label>
+      <input type="email" id="email" value="">
+    </p>
+    
+    <p>
+      <label for="password">Password</label>
+      <input type="password" id="password">
+    </p>
+    
+    <button type="submit">Login</button>
+  </form>
+
+</section>
+
+<section>
+  <h2>Checklist</h2>
+
+  <ul>
+    <li>
+      Don’t rely on native form validation.
+      <ul>
+        <li>Some form controls cannot be validated.</li>
+        <li>There are challenges in styling erroneous fields in some browsers.</li>
+        <li>The error messages may not always be clear or provide a helpful suggestion.</li>
+        <li>The error-message bubble text doesn’t always resize when you zoom the page.</li>
+        <li>Error messages are not correctly associated with the corresponding field.</li>
+      </ul>
+    </li>
+    <li>Allow users to (re)submit the form.</li>
+    <li>Provide an interactive summary of errors if there are more than one errors</li>
+    <li>Focus the erroneous field if there's only one error</li>
+  </ul>
+
+</section>

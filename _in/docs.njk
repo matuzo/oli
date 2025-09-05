@@ -1,0 +1,214 @@
+---
+title: "Docs"
+layout: base.njk
+intro: This page document all settings you can use to adapt the design, the colors used and other global variables.
+---
+{% set tokens_prefix = 'oli' %}
+{% set tokens_settings_root = tokens.settings['s'] %}
+
+<p>
+  <a href="#settings">Settings</a>
+  <a href="#globals">Globals</a>
+  <a href="#colors">Colors</a>
+</p>
+
+<section>
+  <h2 id="settings">Settings</h2>
+
+
+{% macro row(key, subkey, subsubkey, setting) %}
+<tr id="{{ key }}">
+  <td>
+    <code>--{{ tokens_prefix }}-s-{{ key }}{%- if subkey -%}-{{- subkey -}}{%- endif -%}{%- if subsubkey -%}-{{- subsubkey -}}{%- endif -%}</code>
+    {% if setting.comment %}
+      <button style="--oli-s-text-exponent: -1" popovertarget="details-{{key}}{{subkey}}{{subsubkey}}" aria-label="details">i</button>
+      <div popover id="details-{{key}}{{subkey}}{{subsubkey}}">
+          {{ setting.comment }}
+      </div>
+    {% endif %}
+  </td>
+  <td>
+    <code>{{ setting.value }}</code>
+  </td>
+  <td>
+    {% for option in setting.options %}
+      <code>{{ option }}</code> {% if not loop.last %}|{% endif %} 
+    {% endfor %}
+  </td>
+</tr>
+{% endmacro %}
+
+{% macro rows(set) %}
+    {% for key, setting in set %}
+      {% if setting.value | length > 0 %}
+        {{ row(key, null, null, setting) }}
+      {% else %}
+        {% for subkey, subsetting in setting %}
+          {% if subsetting.value | length > 0 %}
+            {{ row(key, subkey, null, subsetting) }}
+          {% else %}
+            {% for subsubkey, subsubsetting in subsetting %}
+              {% if subsubsetting.value | length > 0 %}
+                {{ row(key, subkey, subsubkey, subsubsetting) }}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro table(name, sets) %}
+  <table>
+    <colgroup>
+      <col width="400">
+      <col width="420">
+    </colgroup>
+    <caption>{{ name }}</caption>
+    <tr>
+      <th>property</th>
+      <th>default</th>
+      <th>values</th>
+    </tr>
+
+    {% for set in sets %}
+      {{ rows(set) }}
+    {% endfor %}
+  </table>
+{% endmacro %}
+
+
+{{ table('Settings', [tokens_settings_root]) }}
+  
+</section>
+
+<section>
+  <h2 id="globals">Globals</h2>
+
+  {# {{ rows('Globals', tokens.text['g']) }}
+  {{ rows('Globals', tokens.spacing['g']) }} #}
+
+  {{ table('Settings', [tokens.text['g'], tokens.spacing['g']]) }}
+
+</section>
+
+<section>
+  <h2 id="colors">Colors</h2>
+
+  {% set tokens_colors_root = tokens.colors['g-colors'] %}
+
+  <h3>Primary colors</h3>
+
+  <div class="p-u-gap-s p-u-df p-u-mbe-s">
+      {% for key, color in tokens_colors_root %}
+        {% if color.root and key in ['black', 'white'] %}
+          <button data-color="{{ key }}" class="swatch" style="--swatch-background: var(--{{ tokens_prefix }}-g-colors-{{ key }})" aria-label="{{color.name}}"></button>
+        {% endif %}
+      {% endfor %}
+  </div>
+
+  <div class="p-u-gap-s p-u-df p-u-mbe-s">
+    {% set index = 0 %}
+    {% for key, color in tokens_colors_root %}
+      {% if color.root and key not in ['black', 'white'] %}
+        {% set index = index + 1 %}
+        <button data-color="{{ key }}" class="swatch" style="--swatch-background: var(--{{ tokens_prefix }}-g-colors-{{ key }})" aria-label="{{color.name}}"></button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <details>
+    <summary>
+      Primary color tokens
+    </summary>
+    <table>
+      <caption>Primary colors</caption>
+      <tr>
+        <th>property</th>
+        <th>value</th>
+      </tr>
+        {% for key, color in tokens_colors_root %}
+          {% if color.root %}
+          <tr id="{{ key }}">
+            <td>
+              <code>--{{ tokens_prefix }}-g-colors-{{ key }}</code>
+            </td>
+            <td>
+              {{ color.value }}
+            </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+    </table>
+  </details>
+  
+
+  <h3>Secondary colors</h3>
+
+  {% macro color(clr) %}
+    <h4>{{ clr }}</h4>
+    <div class="p-u-mbe-s">
+      <div class="p-u-gap-s p-u-df p-u-mbe-s">
+        {% set index = 0 %}
+        {% for key, color in tokens_colors_root %}
+          {% if not color.root and clr in key  %}
+            {% set index = index + 1 %}
+            <button data-color="{{ key }}" class="swatch" style="--swatch-background: var(--{{ tokens_prefix }}-g-colors-{{ key }})" aria-label="{{ color.name }}{{index}}00">
+              {{ index }}00
+            </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <details>
+        <summary>
+          {{ clr }} tokens
+        </summary>
+        <table class="p-u-mbe-s">
+          <summary>Variations of {{ clr }}</summary>
+          <tr>
+            <th>property</th>
+            <th>value</th>
+          </tr>
+          <tr>
+            {% for key, color in tokens_colors_root %}
+              {% if not color.root and clr in key %}
+              <tr id="{{ key }}">
+                <td>
+                  <code>--{{ tokens_prefix }}-g-colors-{{ key }}</code>
+                </td>
+                <td>
+                  {{ color.value }}
+                </td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </tr>
+        </table>
+      </details>
+    </div>
+  {% endmacro %}
+
+  {{ color('color-1')}}
+  {{ color('color-2')}}
+  {{ color('color-3')}}
+  {{ color('color-4')}}
+  {{ color('color-5')}}
+  {{ color('color-6')}}
+  {{ color('color-7')}}
+
+  <script>
+    document.body.addEventListener('click', e => {
+        if(document.querySelector('.highlight')) {
+          document.querySelector('.highlight').classList.remove('highlight');
+        }
+        if (e.target.dataset.color) {
+          if(document.querySelector('.highlight')) {
+            document.querySelector('.highlight').classList.remove('highlight');
+          }
+        document.querySelector(`#${e.target.dataset.color}`).classList.add('highlight');
+      }
+    })
+  </script>
+
+</section>

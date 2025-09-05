@@ -1,0 +1,24 @@
+.sort {
+	all: unset;
+	display: flex;
+	gap: 0.4rem;
+	align-items: center;
+}
+
+.sort:focus-visible {
+	outline: 2px solid;
+}
+
+.sort path {
+	fill: transparent;
+	stroke: currentColor;
+	stroke-width: 12;
+}
+
+[aria-sort="ascending"] path:first-child {
+	fill: currentColor;
+}
+
+[aria-sort="descending"] path:last-child {
+	fill: currentColor;
+}

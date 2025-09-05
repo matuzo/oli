@@ -1,0 +1,10 @@
+[role="region"] {
+  background-color: oklch(from var(--oli-g-colors-color-7) 1 c h / 0.2);
+  border: 2px solid var(--oli-g-colors-color-7-100);
+  margin-block-end: var(--oli-g-spacing-l);
+  padding: var(--oli-g-spacing-s);
+}
+
+.hidden {
+  display: none;
+}

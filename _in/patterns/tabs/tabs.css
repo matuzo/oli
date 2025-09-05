@@ -1,0 +1,19 @@
+[role="tabpanel"].is-hidden {
+  display: none;
+}
+
+[role="tablist"] {
+  display: flex;
+  gap: 2px;
+}
+
+[role="tab"] {
+  border-end-end-radius: 0;
+  border-end-start-radius: 0;
+}
+
+[role="tabpanel"] {
+      background-color: var(--oli-s-form-button-background-color-pressed);
+    color: #fff;
+    padding: 1rem;
+}

@@ -1,0 +1,57 @@
+{
+    "g-spacing": {
+      "base": {
+        "value":  "1rem",
+        "options": ["<length-percentage>"]
+      },
+      "scale": {
+        "value": "1.414",
+        "options": ["<number>"]
+      },
+      "xxxs": {
+        "value": "calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), -3))",
+        "comment": "Defaults to 6px",
+        "options": ["<length-percentage>"]
+      },
+      "xxs": {
+        "value": "calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), -2))",
+        "comment": "Defaults to 8px",
+        "options": ["<length-percentage>"]
+      },
+      "xs": {
+        "value": "calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), -1))",
+        "comment": "Defaults to 11px",
+        "options": ["<length-percentage>"]
+      },
+      "s": {
+        "value": "calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 0))",
+        "comment": "Defaults to 16px",
+        "options": ["<length-percentage>"]
+      },
+      "m": {
+        "value": "calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 1))",
+        "comment": "Defaults to 23px",
+        "options": ["<length-percentage>"]
+      },
+      "l": {
+        "value": "calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 2))",
+        "comment": "Defaults to 32px",
+        "options": ["<length-percentage>"]
+      },
+      "xl": {
+        "value": "calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 3))",
+        "comment": "Defaults to 45px",
+        "options": ["<length-percentage>"]
+      },
+      "xxl": {
+        "value": "calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 4))",
+        "comment": "Defaults to 63px",
+        "options": ["<length-percentage>"]
+      },
+      "xxxl": {
+        "value": "calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 5))",
+        "comment": "Defaults to 90px",
+        "options": ["<length-percentage>"]
+      }
+    }
+}

@@ -1,0 +1,49 @@
+@font-face { font-family: "Pangea"; src: url("../../fonts/Pangea-BoldWeb.woff2") format("woff2"); font-weight: 600}
+@font-face { font-family: "Pangea"; src: url("../../fonts/Pangea-RegularWeb.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Pangea"; src: url("../../fonts/Pangea-MediumWeb.woff2") format("woff2"); font-weight: 500; }
+
+@layer core.tokens {
+  :root {
+    --oli-s-layout: vertical;
+    --oli-g-colors-color-1: oklch(0.32 0 0);
+    --oli-g-colors-color-2: oklch(0.8 0.17 98.31);
+    --oli-g-colors-color-4: oklch(0.66 0.21 39.19);
+    --oli-g-colors-color-5: oklch(0.99 0 0);
+    --oli-s-link-color: var(--oli-g-colors-color-4-500);
+    --oli-s-link-color-visited: var(--oli-g-colors-color-4-600);
+    --oli-s-content-vertical-offset: 16rem;
+    --oli-s-figure-background-color: var(--oli-g-colors-color-2-100);
+    --oli-s-table-th-background-color: var(--oli-g-colors-color-2-100);
+
+    --oli-s-logo-color-light: var(--oli-g-colors-color-4-400);
+    --oli-s-logo-color-dark: var(--oli-g-colors-color-4-600);
+    --oli-s-logo-color-text: var(--oli-g-colors-white);
+
+    --oli-s-heading-1-color: var(--oli-g-colors-color-4-600);
+    --oli-s-heading-1-font-weight: 600;
+    --oli-s-heading-2-color: var(--oli-g-colors-color-4-400);
+    --oli-s-heading-2-font-weight: 500;
+  }
+  
+  body {
+    --oli-s-font-family: "Pangea";
+    --oli-s-page-padding: 4rem;
+    --oli-s-page-start-column-width: 20rem;
+  }
+}
+
+@layer components {
+  @layer base {
+    .logo-leaf {
+      fill: var(--oli-s-logo-color-dark);
+    }
+
+    .logo-olive {
+      fill: var(--oli-s-logo-color-light);
+    }
+
+    .logo-text {
+      fill: var(--oli-s-logo-color-text);
+    }
+  }
+}

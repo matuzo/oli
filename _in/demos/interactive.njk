@@ -1,0 +1,33 @@
+---
+title: "Interactive content"
+layout: base.njk
+eleventyComputed:
+  intro: "<p>This page is built using the following elements: {{ elements | safe }}, and others. </p>"
+elements: <code>details</code>, <code>summary</code>, <code>dialog</code>
+tags:
+  - demo
+---
+
+<section>
+  <h2>Details</h2>
+
+  <details>
+    <summary>There's more</summary>
+
+    Here's more!
+  </details>
+</section>
+
+<section>
+  <h2>Dialog</h2>
+
+<button commandfor="my-modal1" command="show-modal">
+  Show modal
+</button>
+
+<dialog id="my-modal1" closedby="any">
+  <button command="close" commandfor="my-modal1">close</button>
+
+  <h1>My modal</h1>
+</dialog>
+</section>

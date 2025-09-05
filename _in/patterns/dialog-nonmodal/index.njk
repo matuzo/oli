@@ -1,0 +1,35 @@
+---
+title: "Dialog"
+subtitle: Non-modal
+date: 2025-01-12
+css: true
+---
+
+<section>
+
+  <button popovertarget="dialog1">
+    Login
+  </button>
+
+  <dialog popover id="dialog1" aria-labelledby="my-modal_heading">
+    <h1 id="my-modal_heading">Login</h1>
+    <div>
+      <label for="name">Username</label>
+      <input type="text" id="name">
+    </div>
+    <button>Login</button>
+  </dialog>
+</section>
+
+<section>
+  <h2>Checklist</h2>
+
+  <ul>
+    <li>You may move focus from the button to the dialog</li>
+    <li>Move focus from the dialog to the button</li>
+    <li>You can use <code>&lt;dialog&gt;</code> or <code>role="dialog"</code></li>
+    <li>Label the dialog</li>
+    <li>Don't make the rest of the page inert</li>
+  </ul>
+
+</section>

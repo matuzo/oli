@@ -1,0 +1,19 @@
+{
+  "name": "oli.css",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tokens": "node build-tokens.mjs ",
+    "start": "pnpm dlx @11ty/eleventy --serve",
+    "tuzo": "cp -r _in/assets/css/third-party/** ../../matuzo-redesign-2025/assets/css/third-party"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "style-dictionary": "^5.0.1"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1"
+  }
+}

@@ -1,0 +1,47 @@
+.card {
+  --phi-card-padding: 1.2rem;
+  --phi-card-max-inline-size: 23rem;
+}
+
+.card-inner {
+  background-color: var(--phi-card-background, light-dark(var(--oli-g-colors-color-5), var(--oli-g-colors-color-5-700)));
+  box-shadow: 0 0 7px 3px oklch(0% 0 0 / 10%);
+  color: var(--phi-card-color, light-dark(#000, #fff));
+  color-scheme: var(--phi-card-color-scheme);
+  display: flex;
+  flex-direction: var(--phi-card-flex-direction, column);
+  max-inline-size: var(--phi-card-max-inline-size);
+  position: relative;
+}
+
+.card-heading {
+  color: initial;
+  text-decoration: initial;
+}
+
+.card-heading a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-heading a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card-media {
+  max-inline-size: var(--phi-card-media-max-inline-size, 100%);
+  order: -1;
+}
+
+.card-content {
+  --oli-s-text-exponent: 1;
+  
+  padding: var(--phi-card-padding);
+}
+
+.card-text {
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,16 @@
+@layer core.tokens {
+  :root {
+    --oli-s-content-vertical-offset: 14rem;
+  }
+}
+
+@layer components {
+  body {
+    background-image: url(../bg.avif);
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    background-position: top right;
+    backface-visibility: visible;
+    background-attachment: fixed;
+  }
+}

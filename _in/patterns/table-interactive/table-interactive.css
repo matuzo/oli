@@ -1,0 +1,20 @@
+table {
+  overflow: hidden;
+}
+
+tr:has(a):is(:hover, :focus-within) {
+  background-color: oklch(from var(--oli-g-colors-color-2-100) l c h / 0.2);
+}
+
+td {
+  position: relative;
+}
+
+table a::before {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  z-index: 1;
+}

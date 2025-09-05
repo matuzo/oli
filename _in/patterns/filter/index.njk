@@ -1,0 +1,115 @@
+---
+title: "Filter"
+date: 2025-01-14
+css: true
+js: 
+  - /assets/js/patterns/filter.js
+  - https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.9.1/cdn.js
+---
+
+
+<section>
+  <h2>My Record Collection</h2>
+
+  <div class="collection" x-data="collection">
+    <fieldset class="filters" >
+      <legend>Filter by</legend>
+
+      <p>
+        <label for="artist">Artist</label>
+        <select id="artist" x-model="filters.artist">
+          <option value="">All</option>
+          <template x-for="artist in artists">
+            <option x-text="artist"></option>
+          </template>
+        </select>
+      </p>
+
+      <p>
+        <label for="decade">Decade</label>
+        <select id="decade" x-model="filters.year">
+          <option value="">All</option>
+          <template x-for="year in decades">
+            <option :value="year" x-text="`${year}0`"></option>
+          </template>
+        </select>
+      </p>
+    </fieldset>
+    <br>
+    
+    <p id="message">Showing <output x-text="message">40 records</output></p>
+    
+    <section aria-labelledby="message" role="region" tabindex="-1" x-ref="region">
+      <ol class="records">	
+        <template x-for="record in page">
+          <li>
+            <a href="#"><strong x-text="record.title"></strong></a><br>
+            Released in <time :datetime="record.year" x-text="record.year"></time> by <span x-text="record.artist"></span>.
+          </li>
+        </template>
+        <li x-ignore>
+          <strong>Die große Palmöllüge</strong><br>
+          Released in <time datetime="2020">2020</time> by Akne Kid Joe.
+        </li>
+        <li x-ignore>
+          <strong>Post Human: Survial Horror</strong><br>
+          Released in <time datetime="2020">2020</time> by Bring me the Horizon.
+        </li>
+        <li x-ignore>
+          <strong>Joy as an Act of Resistance</strong><br>
+          Released in <time datetime="2018">2018</time> by Idles.
+        </li>
+        <li x-ignore>
+          <strong>Licensed to Ill</strong><br>
+          Released in <time datetime="1986">1986</time> by Beastie Boys.
+        </li>
+        <li x-ignore>
+          <strong>Paul&#39;s Boutique</strong><br>
+          Released in <time datetime="1989">1989</time> by Beastie Boys.
+        </li>
+      </ol>
+    </section>
+
+    <nav aria-label="Select a page">
+      <ol class="pages">
+        <template x-for="idx in numOfPages">
+          <li>
+            <a @click.prevent="currentPage = idx - 1; $nextTick(() => { $refs.region.focus(); $refs.region.scrollIntoView() });" :href="`/${idx}`" x-text="`Page ${idx}`" :aria-current="idx === currentPage + 1 ? 'page' : false"></a>
+          </li>
+        </template>
+        <li x-ignore>
+          <a href="/index_js/" aria-current="page">
+            Page 1
+          </a>
+        </li>
+        <li x-ignore>
+          <a href="/index_js/1/">
+            Page 2
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<section>
+  <h2>Checklist</h2>
+
+  <ul>
+    <li>Pick form elements according to their requirements.</li>
+    <li>Use native HTML form elements, because they usually have the best baseline accessibility.</li>
+    <li>Stick to familiar patterns, and don’t obscure the styling of form elements. For example, don’t make radio buttons look like ordinary buttons.</li>
+    <li>Be consistent to help users build familiarity and understand the site.</li>
+    <li>Group groups of radio buttons or checkboxes</li>
+    <li>Consider turning the form into a landmark (role="form" + aria-label="Filter")</li>
+    <li>User either interactive or batch filters</li>
+    <li>
+      Announce changes
+      <ul>
+        <li>When the user filters, would it be helpful to move focus, or would it interrupt the experience?</li>
+        <li>How much information does the user need after filtering?</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>

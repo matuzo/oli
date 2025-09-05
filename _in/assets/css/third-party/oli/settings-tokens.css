@@ -1,0 +1,91 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --oli-s-magic: true; /** Make opinionated design decisions based on the markup */
+  --oli-s-layout: horizontal; /** Page layout */
+  --oli-s-scroll-behavior: smooth; /** Always auto if prefers-reduced-motion is active  */
+  --oli-s-font-stack: transitional; /** Based on modernfontstacks.com */
+  --oli-s-page-max-width: 80rem; /** Maximum width of the page */
+  --oli-s-page-width: 100%; /** Page width */
+  --oli-s-page-start-column-width: 16rem; /** Width of the start column */
+  --oli-s-page-base-font-size: var(--oli-g-text-size-base); /** Base font size */
+  --oli-s-page-text-scale: 1.4; /** Scalefactor for the page font size */
+  --oli-s-page-line-height: 1.7; /** Default line height of running text */
+  --oli-s-page-padding: 2rem; /** Padding for header, main, footer */
+  --oli-s-page-background-color: var(--oli-g-colors-color-5); /** Background color for the page */
+  --oli-s-page-color: var(--oli-g-colors-black); /** Text color for the page */
+  --oli-s-content-max-width: 68ch; /** Maximum width for p, ol, ul, figure, blockquote, picture */
+  --oli-s-content-vertical-offset: initial; /** Extra block-start padding for the content in vertical layouts */
+  --oli-s-content-spacing: var(--oli-g-spacing-m);
+  --oli-s-heading-1-line-height: 1.1;
+  --oli-s-heading-1-color: var(--oli-g-colors-color-1);
+  --oli-s-heading-1-font-weight: 600;
+  --oli-s-heading-1-margin-block: revert-layer;
+  --oli-s-heading-1-scalefactor: 7;
+  --oli-s-heading-2-line-height: 1.2;
+  --oli-s-heading-2-color: var(--oli-g-colors-color-1);
+  --oli-s-heading-2-font-weight: 600;
+  --oli-s-heading-2-margin-block: var(--oli-g-spacing-xl) var(--oli-g-spacing-l);
+  --oli-s-heading-2-scalefactor: 5;
+  --oli-s-heading-3-line-height: 1.2;
+  --oli-s-heading-3-font-weight: 600;
+  --oli-s-heading-3-margin-block: var(--oli-g-spacing-xl) var(--oli-g-spacing-m);
+  --oli-s-heading-3-scalefactor: 4;
+  --oli-s-heading-4-line-height: 1.2;
+  --oli-s-heading-4-font-weight: 500;
+  --oli-s-heading-4-margin-block: var(--oli-g-spacing-m) var(--oli-g-spacing-s);
+  --oli-s-heading-4-scalefactor: 3;
+  --oli-s-heading-5-scalefactor: 2;
+  --oli-s-heading-6-scalefactor: 1;
+  --oli-s-section-margin: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 5));
+  --oli-s-link-color: var(--oli-g-colors-color-3-600);
+  --oli-s-link-color-visited: var(--oli-g-colors-color-4-600);
+  --oli-s-states-error: var(--oli-g-colors-color-4-500);
+  --oli-s-states-highlight: var(--oli-g-colors-color-2-100);
+  --oli-s-header-background-color: var(--oli-g-colors-color-5-100);
+  --oli-s-header-border-image: conic-gradient(oklch(from var(--oli-s-header-background-color) l c h / 0.5) 0 0) fill 1 / /0 50vw;
+  --oli-s-header-color: var(--oli-g-colors-color-1);
+  --oli-s-header-margin-block-end: var(--oli-g-spacing-l);
+  --oli-s-header-title-margin-block-end: var(--oli-g-spacing-xxl); /** Only in vertical layouts */
+  --oli-s-header-logo-inline-size: 150px; /** Only in vertical layouts */
+  --oli-s-main-nav-gap: var(--oli-g-spacing-m);
+  --oli-s-main-nav-gap-vertical: var(--oli-g-spacing-xxs);
+  --oli-s-main-nav-color: var(--oli-g-colors-color-4-500);
+  --oli-s-main-nav-color-active: var(--oli-g-colors-color-3-700);
+  --oli-s-main-nav-text-scale: 1.5;
+  --oli-s-footer-margin-block-start: var(--oli-g-spacing-xl);
+  --oli-s-figure-background-color: var(--oli-g-colors-color-2);
+  --oli-s-blockquote-margin-block: var(--oli-g-spacing-xxl);
+  --oli-s-blockquote-pseudo-before-color: var(--oli-g-colors-color-2);
+  --oli-s-hr-border-color: var(--oli-g-colors-color-5-200);
+  --oli-s-code-font-family: 'Fira Code', monospace;
+  --oli-s-strong-font-weight: 600;
+  --oli-s-table-background-color: var(--oli-g-colors-white);
+  --oli-s-table-th-font-weight: 600;
+  --oli-s-table-th-background-color: var(--oli-g-colors-color-2);
+  --oli-s-table-th-color: var(--oli-g-colors-color-1-700);
+  --oli-s-list-flex-direction: column;
+  --oli-s-list-marker-color: var(--oli-g-colors-color-1);
+  --oli-s-form-item-background-color: var(--oli-g-colors-color-5-200);
+  --oli-s-form-item-spacing: var(--oli-g-spacing-s);
+  --oli-s-form-button-background-color: var(--oli-g-colors-color-1);
+  --oli-s-form-button-background-color-pressed: var(--oli-g-colors-color-4-500);
+  --oli-s-form-button-background-color-disabled: var(--oli-g-colors-color-6-300);
+  --oli-s-form-button-color: var(--oli-g-colors-white);
+  --oli-s-form-legend-border-color: var(--oli-g-colors-color-2);
+  --oli-g-spacing-base: 1rem;
+  --oli-g-spacing-scale: 1.414;
+  --oli-g-spacing-xxxs: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), -3)); /** Defaults to 6px */
+  --oli-g-spacing-xxs: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), -2)); /** Defaults to 8px */
+  --oli-g-spacing-xs: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), -1)); /** Defaults to 11px */
+  --oli-g-spacing-s: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 0)); /** Defaults to 16px */
+  --oli-g-spacing-m: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 1)); /** Defaults to 23px */
+  --oli-g-spacing-l: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 2)); /** Defaults to 32px */
+  --oli-g-spacing-xl: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 3)); /** Defaults to 45px */
+  --oli-g-spacing-xxl: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 4)); /** Defaults to 63px */
+  --oli-g-spacing-xxxl: calc(var(--oli-g-spacing-base) * pow(var(--oli-g-spacing-scale), 5)); /** Defaults to 90px */
+  --oli-g-text-size-base: 1rem;
+  --oli-g-text-scale: 1.24;
+}

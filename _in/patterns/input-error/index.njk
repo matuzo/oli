@@ -1,0 +1,52 @@
+---
+title: "Input"
+subtitle: Error
+date: 2025-01-16
+---
+
+<section>
+  <div>
+    <label for="email">Your e-mail address</label>
+    <div style="--oli-s-text-exponent: 1">
+      <svg viewBox="0 0 640 640" width="16" fill="currentColor" aria-hidden="true">
+        <path d="M640 128 512 0 320 192 128 0 0 128l192 192L0 
+        512l128 128 192-192 192 192 128-128-192-192 192-192z">
+      </svg>
+
+      Please enter a valid e-mail address
+    </div>
+    <input type="email" id="email" required aria-invalid="true" value="kubidus21@" aria-describedby="error">
+  </div>
+</section>
+
+<section>
+  <div>
+    <label for="email">Your e-mail address</label>
+    <div id="hint" style="--oli-s-text-exponent: 1">Enter your primary address</div>
+    <div style="--oli-s-text-exponent: 1">
+      <svg viewBox="0 0 640 640" width="16" fill="currentColor" aria-hidden="true">
+        <path d="M640 128 512 0 320 192 128 0 0 128l192 192L0 
+        512l128 128 192-192 192 192 128-128-192-192 192-192z">
+      </svg>
+
+      Please enter a valid e-mail address
+    </div>
+    <input type="email" id="email" required aria-invalid="true" value="kubidus21@" aria-describedby="hint error">
+  </div>
+</section>
+
+<section>
+  <h2>Checklist</h2>
+
+  <ul>
+    <li>Inform users that something went wrong.</li>
+    <li>Don’t rely on color alone to communicate.</li>
+    <li>Write clear and meaningful error messages.</li>
+    <li>Provide instructions on how to fix errors.</li>
+    <li>Allow users to access erroneous fields.</li>
+    <li>Put error message close to the input field</li>
+    <li>Connect the error message with the input field via <code>aria-describedby</code></li>
+    <li>Put <code>aria-invalid="true"</code> on the input field</li>
+  </ul>
+
+</section>

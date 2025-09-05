@@ -1,0 +1,370 @@
+{
+  "s": {
+    "magic": {
+      "value": "true",
+      "options": ["true", "false"],
+      "comment": "Make opinionated design decisions based on the markup"
+    },
+    "layout": {
+      "value": "horizontal",
+      "options": ["horizontal", "vertical"],
+      "comment": "Page layout"
+    },
+    "scroll-behavior": {
+      "value": "smooth",
+      "options": ["smooth", "auto"],
+      "comment": "Always auto if prefers-reduced-motion is active "
+    },
+    "font-stack": {
+      "value": "transitional",
+      "options": ["transitional", "geometric", "old", "humanist", "slab-serif", "monospace-slab-serif"],
+      "comment": "Based on modernfontstacks.com"
+
+    },
+    "page": {
+      "max-width": {
+        "value": "80rem",
+        "comment": "Maximum width of the page",
+        "options": ["<length-percentage>"]
+      },
+      "width": {
+        "value": "100%",
+        "comment": "Page width",
+        "options": ["<length-percentage>"]
+      },
+      "start-column-width": {
+        "value": "16rem",
+        "comment": "Width of the start column",
+        "options": ["<length-percentage>"]
+      },
+      "base-font-size": {
+        "value": "var(--oli-g-text-size-base)",
+        "comment": "Base font size",
+        "options": ["<length-percentage>"]
+      },
+      "text-scale": {
+        "value": "1.4",
+        "comment": "Scalefactor for the page font size",
+        "options": ["<number>"]
+      },
+      "line-height": {
+        "value": "1.7",
+        "comment": "Default line height of running text",
+        "options": ["<number>", "<length-percentage>"]
+      },
+      "padding": {
+        "value": "2rem",
+        "comment": "Padding for header, main, footer",
+        "options": ["<length-percentage>"]
+      },
+      "background-color": {
+        "value": "var(--oli-g-colors-color-5)",
+        "comment": "Background color for the page",
+        "options": ["<color>"]
+      },
+      "color": {
+        "value": "var(--oli-g-colors-black)",
+        "comment": "Text color for the page",
+        "options": ["<color>"]
+      }
+    },
+    "content": {
+      "max-width": {
+        "value": "68ch",
+        "comment": "Maximum width for p, ol, ul, figure, blockquote, picture",
+        "options": ["<length-percentage>"]
+      },
+      "vertical-offset": {
+        "value": "initial",
+        "comment": "Extra block-start padding for the content in vertical layouts",
+        "options": ["<length-percentage>"]
+      },
+      "spacing": {
+        "value": "var(--oli-g-spacing-m)",
+        "options": ["<length-percentage>"]
+      }
+    },
+    "heading": {
+      "1": {
+        "line-height": {
+          "value": "1.1",
+          "options": ["<number>", "<length-percentage>"]
+        },
+        "color": {
+          "value": "var(--oli-g-colors-color-1)",
+          "options": ["<color>"]
+        },
+        "font-weight": {
+          "value": "600",
+          "options": ["<font-weight-absolute>", "bolder", "lighter"]
+        },
+        "margin-block": {
+          "value": "revert-layer",
+          "options": ["<length-percentage>"]
+        },
+        "scalefactor": {
+          "value": "7",
+          "options": ["<number>"]
+        }
+      },
+      "2": {
+        "line-height": {
+          "value": "1.2",
+          "options": ["<number>", "<length-percentage>"]
+        },
+        "color": {
+          "value": "var(--oli-g-colors-color-1)",
+          "options": ["<color>"]
+        },
+        "font-weight": {
+          "value": "600",
+          "options": ["<font-weight-absolute>", "bolder", "lighter"]
+        },
+        "margin-block": {
+          "value": "var(--oli-g-spacing-xl) var(--oli-g-spacing-l)",
+          "options": ["<length-percentage>"]
+        },
+        "scalefactor": {
+          "value": "5",
+          "options": ["<number>"]
+        }
+      },
+      "3": {
+        "line-height": {
+          "value": "1.2",
+          "options": ["<number>", "<length-percentage>"]
+        },
+        "font-weight": {
+          "value": "600",
+          "options": ["<font-weight-absolute>", "bolder", "lighter"]
+        },
+        "margin-block": {
+          "value": "var(--oli-g-spacing-xl) var(--oli-g-spacing-m)",
+          "options": ["<length-percentage>"]
+        },
+        "scalefactor": {
+          "value": "4",
+          "options": ["<number>"]
+        }
+      },
+      "4": {
+        "line-height": {
+          "value": "1.2",
+          "options": ["<number>", "<length-percentage>"]
+        },
+        "font-weight": {
+          "value": "500",
+          "options": ["<font-weight-absolute>", "bolder", "lighter"]
+        },
+        "margin-block": {
+          "value": "var(--oli-g-spacing-m) var(--oli-g-spacing-s)",
+          "options": ["<length-percentage>"]
+        },
+        "scalefactor": {
+          "value": "3",
+          "options": ["<number>"]
+        }
+      },
+      "5": {
+        "scalefactor": {
+          "value": "2",
+          "options": ["<number>"]
+        }
+      },
+      "6": {
+        "scalefactor": {
+          "value": "1",
+          "options": ["<number>"]
+        }
+      }
+    },
+    "section": {
+      "margin": {
+        "value": "{g-spacing.xxxl}",
+        "options": ["<length-percentage>"]
+      }
+    },
+    "link": {
+      "color": {
+        "value": "var(--oli-g-colors-color-3-600)",
+        "options": ["<color>"]
+
+      },
+      "color-visited": {
+        "value": "var(--oli-g-colors-color-4-600)",
+        "options": ["<color>"]
+
+      }
+    },
+    "states": {
+      "error": {
+        "value": "var(--oli-g-colors-color-4-500)",
+        "options": ["<color>"]
+
+      },
+      "highlight": {
+        "value": "var(--oli-g-colors-color-2-100)",
+        "options": ["<color>"]
+
+      }
+    },
+    "header": {
+      "background-color": {
+        "value": "var(--oli-g-colors-color-5-100)",
+        "options": ["<color>"]
+      },
+      "border-image": {
+        "value": "conic-gradient(oklch(from var(--oli-s-header-background-color) l c h / 0.5) 0 0) fill 1 / /0 50vw",
+        "options": ["<border-image-source>", "<border-image-slice>", "<border-image-width>", "<border-image-outset>", "<border-image-repeat>"]
+      },
+      "color": {
+        "value": "var(--oli-g-colors-color-1)",
+        "options": ["<color>"]
+      },
+      "margin-block-end": {
+        "value": "var(--oli-g-spacing-l)",
+        "options": ["<length-percentage>"]
+      },
+      "title-margin-block-end": {
+        "value": "var(--oli-g-spacing-xxl)",
+        "comment": "Only in vertical layouts",
+        "options": ["<length-percentage>"]
+      },
+      "logo-inline-size": {
+        "value": "150px",
+        "comment": "Only in vertical layouts",
+        "options": ["<length-percentage>"]
+      }
+    },
+    "main-nav": {
+      "gap": {
+        "value": "var(--oli-g-spacing-m)",
+        "options": ["<length-percentage>"]
+      },
+      "gap-vertical": {
+        "value": "var(--oli-g-spacing-xxs)",
+        "options": ["<length-percentage>"]
+      },
+      "color": {
+        "value": "var(--oli-g-colors-color-4-500)",
+        "options": ["<color>"]
+      },
+      "color-active": {
+        "value": "var(--oli-g-colors-color-3-700)",
+        "options": ["<color>"]
+      },    
+      "text-scale": {
+        "value": "1.5",
+        "options": ["<number>"]
+      }    
+    },
+    "footer": {
+      "margin-block-start": {
+        "value": "var(--oli-g-spacing-xl)",
+        "options": ["<length-percentage>"]
+      }
+    },
+    "figure": {
+      "background-color": {
+        "value": "var(--oli-g-colors-color-2)",
+        "options": ["<color>"]
+      }
+    },
+    "blockquote": {
+      "margin-block": {
+        "value": "var(--oli-g-spacing-xxl)",
+        "options": ["<color>"]
+      },
+      "pseudo-before": {
+        "color": {
+          "value": "var(--oli-g-colors-color-2)",
+          "options": ["<color>"]
+        }
+      }
+    },
+    "hr": {
+      "border-color": {
+        "value": "var(--oli-g-colors-color-5-200)",
+        "options": ["<color>"]
+      }
+    },
+    "code": {
+      "font-family": {
+        "value": "'Fira Code', monospace",
+        "options": ["<color>"]
+      }
+    },
+    "strong": {
+      "font-weight": {
+        "value": "600",
+        "options": ["<font-weight-absolute>", "bolder", "lighter"]
+      }
+    },
+    "table": {
+      "background-color": {
+        "value": "var(--oli-g-colors-white)",
+        "options": ["<color>"]
+      },
+      "th": {
+        "font-weight": {
+          "value": "600",
+          "options": ["<font-weight-absolute>", "bolder", "lighter"]
+        },
+        "background-color": {
+          "value": "var(--oli-g-colors-color-2)",
+          "options": ["<color>"]
+        },
+        "color": {
+          "value": "var(--oli-g-colors-color-1-700)",
+          "options": ["<color>"]
+        }
+      }
+    },
+    "list": {
+      "flex-direction": {
+        "value": "column",
+        "options": ["row", "row-reverse", "column", "column-reverse"]
+      },
+      "marker-color": {
+        "value": "var(--oli-g-colors-color-1)",
+        "options": ["<color>"]
+      }
+    },
+    "form": {
+      "item": {
+        "background-color": {
+          "value": "var(--oli-g-colors-color-5-200)",
+          "options": ["<color>"]
+        },
+        "spacing": {
+          "value": "var(--oli-g-spacing-s)",
+          "options": ["<length-percentage>"]
+        }
+      },
+      "button": {
+        "background-color": {
+          "value": "var(--oli-g-colors-color-1)",
+          "options": ["<color>"]
+        },
+        "background-color-pressed": {
+          "value": "var(--oli-g-colors-color-4-500)",
+          "options": ["<color>"]
+        },
+        "background-color-disabled": {
+          "value": "var(--oli-g-colors-color-6-300)",
+          "options": ["<color>"]
+        },
+        "color": {
+          "value": "var(--oli-g-colors-white)",
+          "options": ["<color>"]
+        }
+      },
+      "legend": {
+        "border-color": {
+          "value": "var(--oli-g-colors-color-2)",
+          "options": ["<color>"]
+        }
+      }
+    }
+  }
+}

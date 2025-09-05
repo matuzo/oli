@@ -1,0 +1,28 @@
+.pagination ul {
+  --oli-s-list-flex-direction: row;
+  
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page1 li:nth-child(n+6) {
+  display: none;
+}
+
+.page2 li:nth-child(-n+5),
+.page2 li:nth-child(n+11){
+  display: none;
+}
+
+.page3 li:nth-child(-n+10),
+.page3 li:nth-child(n+16){
+  display: none;
+}
+
+.page4 li:nth-child(-n+15),
+.page4 li:nth-child(n+21){
+  display: none;
+}

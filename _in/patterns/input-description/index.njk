@@ -1,0 +1,32 @@
+---
+title: "Input"
+subtitle: Description
+date: 2025-01-15
+---
+
+<section>
+  <label for="password">Password</label>
+  <div id="password-hint" style="--oli-s-text-exponent: 1">At least 8 characters, uppercase and lowercase</div>
+  <input type="text" id="password" autocomplete="new-password" aria-describedby="password-hint">
+</section>
+
+<section>
+  <h2>Checklist</h2>
+
+  <ul>
+    <li>
+      Consider adding instructions for the entire forms to explain things like:
+
+      <ul>
+        <li>legal jargon</li>
+        <li>where to find obscure information</li>
+        <li>in what format the information should be given</li>
+        <li>what you’ll do with personal information</li>
+        <li>the consequences of making one choice over another</li>
+      </ul>
+    </li>
+    <li>Put inline descriptions close to the input field</li>
+    <li>Connect the description with the input field via <code>aria-describedby</code></li>
+  </ul>
+
+</section>

@@ -1,0 +1,21 @@
+:root {
+  --oli-g-colors-color-1: oklch(0.43 0.27 266.83);
+  --oli-g-colors-color-2: oklch(0.89 0.13 181.2);
+  --oli-g-colors-color-4: oklch(0.43 0.27 266.83);
+  --oli-g-colors-color-5: oklch(1 0 0);
+  --oli-g-text-scale: 1.15;
+  --oli-g-text-size-base: 1.1rem;
+  --oli-s-main-nav-text-scale: 1;
+  --oli-s-main-nav-gap: var(--oli-g-spacing-s);
+  
+  
+  /* --oli-s-page-background-color: oklch(1 0 0); */
+  --oli-s-page-max-width: 40rem; 
+
+  --oli-s-font-stack: monospace-slab-serif;
+  --oli-s-page-background-color: var(--oli-s-page-background-color);
+
+  --oli-s-header-background-color: transparent;
+  --oli-s-header-border-image: none;
+  
+}

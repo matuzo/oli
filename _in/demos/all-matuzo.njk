@@ -1,0 +1,15 @@
+---
+title: "All elements"
+layout: base.njk
+tags:
+  - demo
+theme: matuzo
+---
+
+  {% for demo in collections.demo %}
+    {% if demo.fileSlug != 'all' and 'all-' not in demo.fileSlug%}
+      <section>
+        {{ demo.templateContent | safe }}
+      </section>
+    {% endif %}
+  {% endfor %}

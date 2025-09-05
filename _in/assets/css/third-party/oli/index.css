@@ -1,0 +1,685 @@
+/**
+ * Font sizes of all elements are limited to the sizes configured
+ * in the defined type scale.
+ * 
+ * @var { Number } --oli-s-text-exponent - defines the font size
+ * Default: 0, which equals the base font size (--oli-s-page-base-size-base)
+ * @var { Length-Percentage } --oli-text-size - overrides the formular
+ * Allows you to use a value outside the scale.
+ * 
+ * Examples:
+ * h1 { --oli-s-text-exponent: 8 }
+ * small { --oli-s-text-exponent: -1 }
+ * .custom { --oli-text-size: 2rem } 
+ * 
+ */
+
+*, *::before, *::after {
+	--_font-size-base: var(--oli-s-page-base-font-size);
+	--_font-size-scaling-factor: pow(var(--oli-g-text-scale), var(--oli-s-text-exponent, 0));
+
+	font-size: var(--oli-text-size, calc(var(--_font-size-base) * var(--_font-size-scaling-factor)));
+}
+
+/**
+ * Apply custom scroll behavior (smooth scrolling) only
+ * if there's no preference for reduced motion
+ *
+ */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: var(--oli-s-bscroll-behavior);
+	}
+}
+
+
+/**
+ * 1 Set the default font size for the page 
+ * 2 Set padding for the entire page
+ * 3 No extra padding for header, main, footer
+ */
+body {
+	--oli-s-text-exponent: var(--oli-s-page-text-scale); /* 1 */
+	
+  --_body-padding: var(--oli-s-page-padding); /* 2 */
+	--_wrapper-padding: 0; /* 3 */
+	--_body-display: block;
+	--_body-grid-template-columns: initial;
+	--_body-grid-template-row: initial;
+	--_body-min-inline-size: 0;
+
+	background-color: var(--oli-s-page-background-color);
+	color: var(--oli-s-page-color);
+	display: var(--_body-display);
+	font-family: var(--oli-s-font-family);
+	grid-template-columns: var(--_body-grid-template-columns);
+	grid-template-rows: var(--_body-grid-template-row);
+	line-height: var(--oli-s-page-line-height);
+	margin: 0;
+	min-block-size: var(--_body-min-inline-size);
+	padding: var(--_body-padding);  /* 2 */
+
+}
+
+/**
+ * All this styles will be reverted if the heading is nested
+ * in article, aside, main, nav, or section.
+ * 
+ * 1 Margin for the page header
+ * 2 Padding for the page header
+ */
+header, [role="banner"] {
+	--_header-margin: 0 0 var(--oli-s-header-margin-block-end) 0;  /* 1 */
+	--_header-justify-content: initial;
+	--_header-align-items: initial;
+	--_header-padding-block: var(--_wrapper-padding);
+	--_header-padding-inline: var(--_wrapper-padding);
+	--_header-border-image: initial;
+
+	align-items: var(--_header-align-items);
+	border-image: var(--_header-border-image);
+	justify-content: var(--_header-justify-content);
+	padding-inline: var(--_header-padding-inline); /* 2 */
+	padding-block: var(--_header-padding-block); /* 2 */
+	margin: var(--_header-margin); /* 1 */
+}
+
+/**
+ * 1 Centers the main element 
+ * 2
+ * 3 Padding for the main content
+ */
+main {
+	--_main-margin: 0;
+	--_main-padding-block: var(--_wrapper-padding);
+	--_main-padding-inline: var(--_wrapper-padding);
+	--_main-max-inline-size: auto;
+
+	margin: var(--_main-margin);
+	min-width: 0;
+	padding-inline: var(--_main-padding-inline); /* 2 */
+	padding-block: var(--_main-padding-block); /* 2 */
+	max-inline-size: var(--_main-max-inline-size); /* 2 */
+}
+
+/**
+ * All this styles will be reverted if the heading is nested
+ * in article, aside, main, nav, or section.
+ * 
+ * 1 Margin for the page footer
+ * 2 Padding for the page footer
+ */
+footer {
+	--_footer-grid-column: auto;
+	--_footer-margin: var(--oli-s-footer-margin-block-start) 0 0 0;  /* 1 */
+	--_footer-padding-block: var(--_wrapper-padding);
+	--_footer-padding-inline: var(--_wrapper-padding);
+	padding-inline: var(--_footer-padding-inline); /* 2 */
+	padding-block: var(--_footer-padding-block); /* 2 */
+	grid-column: var(--_footer-grid-column); /* 2 */
+	margin: var(--_footer-margin); /* 1 */
+}
+
+/**
+ * Large spacing between sections and articles
+ */
+:is(section, article):where(:not(:last-child)) {
+  margin-block-end: var(--oli-s-section-margin);
+}
+
+/**
+ * 1 Max inline size for content elements
+ * 2 No block end margin
+ */
+p, ol, ul, dl, figure, blockquote, picture {
+	max-inline-size: var(--oli-s-content-max-width); /* 1 */
+	margin-block: 0; /* 2 */
+}
+
+/**
+ * Spacing between content elements
+ */
+:is(p, ol, ul, dl, figure, blockquote, picture):where(:not(:last-child)) {
+	margin-block-end: var(--oli-s-content-spacing);
+}
+
+/**
+ * 1 Max inline size for headings
+ * 2 Balance multi-line headings
+ */
+h1, h2, h3, h4, h5, h6 {
+	max-inline-size: 75%; /* 1 */
+  text-wrap: balance;
+}
+
+/**
+ * Remove margin for headings at the beginning of a parent
+ */
+:where(h1, h2, h3, h4, h5, h6):first-child {
+  margin-block-start: 0;
+}
+
+/**
+ * h1 base styles
+ */
+h1 {
+	color: var(--oli-s-heading-1-color);
+	font-weight: var(--oli-s-heading-1-font-weight);
+	line-height: var(--oli-s-heading-1-line-height);
+}
+
+/**
+ * Font size and margin for h1 and hgroup's containing an h1
+ */
+h1, hgroup:has(h1) {
+	--oli-s-text-exponent: var(--oli-s-heading-1-scalefactor);
+}
+
+
+dialog :is(h1, hgroup:has(h1)) {
+	--oli-s-text-exponent: var(--oli-s-heading-2-scalefactor);
+}
+
+/**
+ * h2 base styles
+ */
+h2 {
+	color: var(--oli-s-heading-2-color);
+	font-weight: var(--oli-s-heading-2-font-weight);
+	line-height: var(--oli-s-heading-2-line-height);
+}
+
+/**
+ * Font size and margin for h2 and hgroup's containing an h2
+ * 
+ */
+h2, hgroup:has(h2) {
+	--oli-s-text-exponent: var(--oli-s-heading-2-scalefactor);
+	margin-block: var(--oli-s-heading-2-margin-block);
+}
+
+/**
+ * h3 base styles
+ */
+h3 {
+	color: var(--oli-s-heading-3-color);
+	font-weight: var(--oli-s-heading-3-font-weight);
+	line-height: var(--oli-s-heading-3-line-height);
+}
+
+/**
+ * Font size and margin for h3 and hgroup's containing an h3
+ */
+h3, hgroup:has(h3) {
+	--oli-s-text-exponent: var(--oli-s-heading-3-scalefactor);
+	margin-block: var(--oli-s-heading-3-margin-block);
+}
+
+/**
+ * h4 base styles
+ */
+h4 {
+	color: var(--oli-s-heading-4-color);
+	font-weight: var(--oli-s-heading-4-font-weight);
+	line-height: var(--oli-s-heading-4-line-height);
+}
+
+/**
+ * Font size and margin for h4 and hgroup's containing an h4
+ */
+h4, hgroup:has(h4) {
+	--oli-s-text-exponent: var(--oli-s-heading-4-scalefactor);
+	margin-block: var(--oli-s-heading-4-margin-block);
+}
+
+/**
+ * h5 base styles
+ */
+h5 {
+	--oli-s-text-exponent: var(--oli-s-heading-5-scalefactor);
+}
+
+/**
+ * h6 base styles
+ */
+h6 {
+	--oli-s-text-exponent: var(--oli-s-heading-6-scalefactor);
+}
+
+/**
+ * Remove margin on headings in hgroup because
+ * the hgroup has the same margin
+ */
+hgroup :where(h1, h2, h3, h4, h5, h6) {
+  margin-block-end: 0;
+}
+
+/**
+ * The element following the heading inside an hgroup
+ * doesn't need a margin
+ */
+hgroup :where(h1, h2, h3, h4, h5, h6) + * {
+  margin: 0;
+}
+
+/**
+ * Other elements inside the hgroup should have the base
+ * font size
+ */
+hgroup :not(h1, h2, h3, h4, h5, h6) {
+	--oli-s-text-exponent: var(--oli-s-page-text-scale);
+}
+
+/**
+ * Figure base styles
+ */
+:where(figure) {
+	background-color: var(--oli-s-figure-background-color);
+	border-radius: 3px;
+	padding: 0.3em;
+	margin: 0;
+}
+
+/**
+ * Figcaption base styles
+ */
+figcaption {
+	padding: 0.6rem 0.3rem 0rem;
+}
+
+/**
+ * Blockquote base styles
+ */
+blockquote {
+	--oli-s-text-exponent: 4;
+	
+	font-style: italic;
+	position: relative;
+	line-height: 1.1;
+	margin-block: var(--oli-s-blockquote-margin-block);
+}
+
+/**
+ * Add a quotation mark at the beginning of the quote
+ */
+blockquote::before {
+	--oli-s-text-exponent: 8;
+
+	content: open-quote;
+	color: var(--oli-s-blockquote-pseudo-before-color);
+	opacity: 0.4;
+	position: absolute;
+	left: -0.25em;
+	top: -0.2lh;
+	z-index: -1;
+}
+
+/**
+ * hr base styles
+ */
+hr {
+	border-color: var(--oli-s-hr-border-color);
+	border-width: 0 0 2px 0;
+	border-style: solid;
+}
+
+/**
+ * pre base styles
+ */
+pre {
+	--oli-s-text-exponent: 1;
+}
+
+ol, ul {
+	display: flex;
+	flex-direction: var(--oli-s-list-flex-direction);
+	gap: 0.3rem;
+}
+
+ol ol, ul ul {
+	gap: 0.1rem;
+	padding-inline-start: 1em;
+}
+
+li::marker {
+	color: var(--oli-s-list-marker-color);
+}
+
+/**
+ * code base styles
+ */
+code:not([class]) {
+	font-size: 0.9em;
+	font-family: var(--oli-s-code-font-family);
+}
+
+/**
+ * var base styles
+ */
+var {
+	font-size: 0.9em;
+	font-family: var(--oli-s-code-font-family);
+}
+
+/**
+ * kbd base styles
+ */
+kbd {
+	font-size: 0.9em;
+	font-family: var(--oli-s-code-font-family);
+}
+
+/**
+ * sub,sup base styles
+ */
+sub, sup {
+	--oli-s-text-exponent: -2;
+}
+
+/**
+ * strong base styles
+ */
+strong {
+	font-weight: var(--oli-s-strong-font-weight);
+}
+
+/**
+ * strong base styles
+ */
+b {
+	font-weight: var(--oli-s-strong-font-weight);
+}
+
+/**
+ * cite base styles
+ */
+cite {
+	font-style: italic;
+}
+
+/**
+ * q base styles
+ */
+q {
+	font-style: italic;
+}
+
+/**
+ * Make rt smaller than the rest and add a bit of spacing
+ */
+ruby rt {
+	--oli-s-text-exponent: -1;
+
+	margin-block: 1px;
+}
+
+/**
+ * Base link styling
+ */
+
+a {
+	text-underline-offset: 2px;
+}
+
+a:link {
+	color: var(--oli-s-link-color);
+}
+
+a:where(:hover, :focus-visible) {
+	text-decoration: none;
+}
+
+a:visited {
+	color: var(--oli-s-link-color-visited);
+}
+
+/**
+ * To avoid confusion with underlined links we use <u>
+ * for spelling errors or similiar formatting
+ */
+u {
+	text-decoration-style: wavy;
+	color: var(--oli-s-states-error);
+}
+
+/**
+ * Base small styling
+ */
+small {
+	--oli-s-text-exponent: 1;
+}
+
+/**
+ * Base mark styling
+ */
+mark {
+	background-color: var(--oli-s-states-highlight);
+	padding-inline: 0.2em;
+	border-radius: 2px;
+}
+
+/**
+ * Base iframe styling
+ */
+iframe {
+	border-style: solid;
+}
+
+/**
+ * Tables
+ */
+
+table {
+		background-color: oklch(from var(--oli-s-table-background-color) l c h / 0.67);
+	--oli-s-text-exponent: 1;
+}
+
+caption {
+	--oli-s-text-exponent: 2;
+	font-weight: 600;
+	text-align: start;
+}
+
+/**
+ * 
+ */
+th {
+	text-align: start;
+	/* TODO: move into var */
+	background-color: var(--oli-s-table-th-background-color);
+	color: var(--oli-s-table-th-color);
+	font-weight: var(--oli-s-table-th-font-weight);
+}
+
+/**
+ * 
+ */
+th:only-of-type, td[scope="row"] {
+	background-color: oklch(from var(--oli-s-table-th-background-color) l c h / 0.2);
+}
+
+/**
+ * 
+ */
+/* Spacing between label/input groups */
+form > :is(div, p) {
+  margin-block-end: var(--oli-s-form-item-spacing);
+}
+
+/**
+ * Forms
+ */
+
+/**
+ * Base label styling
+ */
+label {
+	font-weight: bold;
+}
+
+/**
+ * Base input, textarea, and select styling
+ */
+input:where(
+	[type="date"], 
+	[type="email"], 
+	[type="month"], 
+	[type="number"], 
+	[type="password"], 
+	[type="search"], 
+	[type="tel"], 
+	[type="text"], 
+	[type="time"], 
+	[type="url"],
+	[type="week"]
+), 
+textarea,
+select {
+  border-radius: 0.1em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--oli-s-form-item-background-color);
+  padding: 0.3em 0.6em;
+}
+
+/**
+ * Base button styling
+ */
+button, 
+input:is([type="button"], [type="reset"], [type="submit"]) {
+	--_button-background: var(--oli-s-form-button-background-color);
+	--_button-opacity: 1;
+	--_button-text: var(--oli-s-form-button-color);
+
+  border-radius: 3px;
+  border: 1px solid transparent;
+  background: oklch(from var(--_button-background) l c h / var(--_button-opacity));
+  color: var(--_button-text);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: Seravek, system-ui, sans-serif;
+	padding: 0.6em 0.7em;
+	text-box-trim: trim-both;
+	text-box-edge: cap alphabetic;
+	line-height: 1.4;
+}
+
+/**
+ * Button hover styles
+ */
+:is(button, input:where([type="button"], [type="reset"], [type="submit"])):not([disabled]):is(:hover, :focus-visible) {
+	--_button-opacity: 0.8;
+}
+
+/**
+ * Disabled button style
+ */
+[disabled] {
+	--_button-background: var(--oli-s-form-button-background-color-disabled);
+	cursor: not-allowed;
+}
+
+/**
+ * Pressed button style
+ */
+[aria-pressed] {
+	--_button-background:	var(--oli-s-form-button-background-color-pressed);
+}
+
+/**
+ * Pressed button style
+ */
+[aria-selected] {
+  	--_button-background:	var(--oli-s-form-button-background-color-pressed);
+}
+
+[aria-selected="false"]:not(:hover, :focus-visible) {
+	--_button-opacity: 0.2;
+	color: var(--oli-s-form-button-background-color-pressed);
+}
+
+[aria-selected]:not([disabled]):is(:hover, :focus-visible) {
+  	--_button-background:	var(--oli-s-form-button-background-color-pressed);
+}
+
+/**
+ * Form field groups
+ */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  background-color: var(--oli-s-page-background-color);
+  position: relative;
+  margin-left: 20px;
+  line-height: 1;
+  padding-inline: 10px;
+  margin-block-end: 1rem;
+  left: 0;
+}
+
+legend::before {
+  display: block;
+  content: "";
+  background: var(--oli-s-form-legend-border-color);
+  height: 2px;
+  position: absolute;
+  top: calc(50% + 3px);
+  left: -20px;g
+  transform: translateY(-100%);
+  width: calc(100% + 40px);
+  z-index: -1;
+}
+
+
+
+[type="radio"], [type="checkbox"] {
+	appearance: none;
+	aspect-ratio: 1;
+	background-color: var(--oli-s-form-button-color);
+	border: 1px solid var(--oli-s-form-button-background-color);
+	margin: 0 var(--oli-g-spacing-xxxs) 0 0;
+	width: 0.7em;
+	border-radius: 2px;
+	position: relative;
+}
+
+[type="radio"] {
+	border-radius: 50%;
+}
+
+:is([type="radio"], [type="checkbox"]):checked {
+	background-color: var(--oli-s-form-button-background-color);
+}
+
+:is([type="radio"], [type="checkbox"]):checked::before {
+	content: "";
+	display: block;
+	inset: 0;
+	position: absolute;
+	margin: auto;
+}
+
+[type="radio"]:checked::before {
+	background-color: var(--oli-s-form-button-color);
+	width: 50%;
+	border-radius: inherit;
+	aspect-ratio: 1;
+}
+
+[type="checkbox"]:checked::before {
+    width: 80%;
+    aspect-ratio: 16 / 9;
+    inset: -2px 0 0 0;
+    border: 2px solid;
+    border-color: transparent transparent var(--oli-s-form-button-color) var(--oli-s-form-button-color);
+    transform: rotate(-45deg) translate(-0%, 0%);
+    transform-origin: center;
+}
+
+[role="region"][tabindex="0"] {
+	overflow: auto;
+}

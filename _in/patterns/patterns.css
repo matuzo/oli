@@ -1,0 +1,7 @@
+[aria-pressed="true"] {
+  background-color: aqua;
+}
+
+[aria-expanded="true"] + div { 
+  display: block !important;
+}

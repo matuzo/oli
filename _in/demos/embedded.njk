@@ -1,0 +1,33 @@
+---
+title: "Embedded content"
+layout: base.njk
+eleventyComputed:
+  intro: "<p>This page is built using the following elements: {{ elements | safe }}, and others. </p>"
+elements: <code>picture</code>, <code>source</code>, <code>img</code>, <code>iframe</code>, <code>video</code>, <code>audio</code>
+tags:
+  - demo
+---
+<h2>img</h2>
+<p>
+  <img src="/media/recordplayer.webp" width="560" alt="Closeup of a cartridge on the tone arm of a record player playing a 12 inch vinyl record.">
+</p>
+
+<h2>picture</h2>
+<p>
+  <picture>
+    <source type="image/avif" srcset="/media/recordplayer.avif">
+    <img src="/media/recordplayer.webp" width="560" alt="Closeup of a cartridge on the tone arm of a record player playing a 12 inch vinyl record.">
+  </picture>
+</p>
+
+<h2>iframe</h2>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_YiHjUXQpLM?si=8bhCFBF3126DqRdo" title="CZARFACE & MF DOOM "Bomb Thrown" " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h2>video</h2>
+
+<video width="560" controls src="/media/recordplayer.mp4"></video>
+
+<h2>audio</h2>
+
+<audio controls src="/media/dialing.mp3"></audio>

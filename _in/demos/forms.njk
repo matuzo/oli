@@ -1,0 +1,129 @@
+---
+title: "Forms"
+layout: base.njk
+eleventyComputed:
+  intro: "<p>This page is built using the following elements: {{ elements | safe }}, and others. </p>"
+elements: <code>table</code>, <code>caption</code>, <code>tr</code>, <code>td</code>, <code>th</code>
+tags:
+  - demo
+---
+
+<section>
+  <h2>Input</h2>
+
+  <form action="#">
+    <p>
+      <label for="name">Username</label>
+      <input type="text" id="name">
+    </p>
+    <p>
+      <label for="search">Search</label>
+      <input type="search" id="search">
+    </p>
+    <p>
+      <label for="tel">Telephone</label>
+      <input type="tel" id="tel">
+    </p>
+    <p>
+      <label for="url">URL</label>
+      <input type="url" id="url">
+    </p>
+    <p>
+      <label for="email">Email</label>
+      <input type="email" id="email">
+    </p>
+    <p>
+      <label for="password">Password</label>
+      <input type="password" id="password">
+    </p>
+    <p>
+      <label for="date">Date</label>
+      <input type="date" id="date">
+    </p>
+    <p>
+      <label for="month">Month</label>
+      <input type="month" id="month">
+    </p>
+    <p>
+      <label for="week">Week</label>
+      <input type="week" id="week">
+    </p>
+    <p>
+      <label for="time">Time</label>
+      <input type="time" id="time">
+    </p>
+    <p>
+      <label for="number">Number</label>
+      <input type="number" id="number">
+    </p>
+    <p>
+      <label for="range">Range</label>
+      <input type="range" id="range">
+    </p>
+    <p>
+      <label for="color">Color</label>
+      <input type="color" id="color">
+    </p>
+    <p>
+      <label for="file">File</label>
+      <input type="file" id="file">
+    </p>
+    <p>
+      <input type="checkbox" id="checkbox">
+      <label for="checkbox">Checkbox</label>
+    </p>
+    <p>
+      <input type="radio" id="radio">
+      <label for="radio">Radio</label>
+    </p>
+  </form>
+</section>
+
+<section>
+  <h2>Buttons</h2>
+
+  <p>
+    <button>Send</button>
+  </p>
+
+  <p>
+    <input type="submit" value="Send">
+  </p>
+
+  <p>
+    <input type="reset" value="Zurücksetzen">
+  </p>
+
+  <p>
+    <input type="button" value="Action">
+  </p>
+
+</section>
+
+<section>
+  <h2>Select</h2>
+
+  <div>
+    <label for="select">
+      Options
+    </label>
+    <select id="select">
+      <option>Option A</option>
+      <option>Option B</option>
+      <option>Option C</option>
+      <option>Option D</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="select3">
+      Options
+    </label>
+    <select size="6" id="select3">
+      <option>Option A</option>
+      <option>Option B</option>
+      <option>Option C</option>
+      <option>Option D</option>
+    </select>
+  </div>
+</section>

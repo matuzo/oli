@@ -1,0 +1,11 @@
+#accordion2 [aria-expanded] {
+   all: unset;
+}
+
+#accordion2 [aria-expanded]:focus-visible {
+  outline: 4px solid;
+}
+
+h3:has([aria-expanded="false"]) + .accordion-content {
+  display: none;
+}
