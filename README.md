@@ -1,15 +1,22 @@
-# Basic Style Dictionary
+# oli.css
 
-This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
+A modern no-class framework [early alpha].
 
-```bash
-npx style-dictionary build
-```
+oli.css is an accessible no-class CSS framework built with modern CSS. It allows you to create beautiful websites without writing any CSS.
 
-Otherwise, install Style Dictionary locally for this project first, `cd` into this directory and run:
-
-```bash
-npm init -y && npm install style-dictionary
-```
-
-and then run the above command.
+* no classes or data- attributes
+  100% HTML only
+* highly configurably CSS-API
+  ```css
+  :root {
+    --oli-s-magic: true; /** Make opinionated design decisions based on the markup */
+    --oli-s-layout: horizontal; /** Page layout */
+    --oli-s-scroll-behavior: smooth; /** Always auto if prefers-reduced-motion is active  */
+    --oli-s-font-stack: transitional; /** Based on modernfontstacks.com */
+    --oli-s-page-max-width: 80rem; /** Maximum width of the page */
+    --oli-s-page-width: 100%; /** Page width */
+    --oli-s-page-start-column-width: 16rem; /** Width of the start column */
+    …
+  }
+  ```
+* uses modern CSS and cuts the mustard at Cascade Layers
